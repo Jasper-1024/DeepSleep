@@ -3,7 +3,7 @@ package com.js.deepsleep.db.entity
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 
-@Entity(tableName = "extend", primaryKeys = arrayOf("packageName_ex", "type"))
+@Entity(tableName = "extend", primaryKeys = ["packageName_ex", "type"])
 data class Extend(
     @ColumnInfo(name = "packageName_ex")
     var packageName: String = "",
