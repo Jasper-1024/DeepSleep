@@ -1,7 +1,7 @@
-package com.js.deepsleep.db.data
+package com.js.deepsleep.data.db.data
 
-import com.js.deepsleep.db.entity.AppSt
-import com.js.deepsleep.db.entity.Extend
+import com.js.deepsleep.data.db.entity.AppSt
+import com.js.deepsleep.data.db.entity.Extend
 
 class TestData {
     companion object {

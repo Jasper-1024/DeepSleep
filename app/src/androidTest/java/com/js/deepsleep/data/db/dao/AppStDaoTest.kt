@@ -1,11 +1,11 @@
-package com.js.deepsleep.db.dao
+package com.js.deepsleep.data.db.dao
 
 import android.content.Context
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.js.deepsleep.db.AppDatabase
-import com.js.deepsleep.db.data.TestData
+import com.js.deepsleep.data.db.AppDatabase
+import com.js.deepsleep.data.db.data.TestData
 import kotlinx.coroutines.runBlocking
 import org.junit.After
 import org.junit.Assert
