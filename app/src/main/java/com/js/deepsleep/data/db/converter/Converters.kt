@@ -1,4 +1,4 @@
-package com.js.deepsleep.db.converter
+package com.js.deepsleep.data.db.converter
 
 import androidx.room.TypeConverter
 import com.google.gson.Gson

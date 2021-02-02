@@ -1,18 +1,18 @@
-package com.js.deepsleep.db
+package com.js.deepsleep.data.db
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.js.deepsleep.db.converter.Converters
-import com.js.deepsleep.db.dao.AppDao
-import com.js.deepsleep.db.dao.AppInfoDao
-import com.js.deepsleep.db.dao.AppStDao
-import com.js.deepsleep.db.dao.ExtendDao
-import com.js.deepsleep.db.entity.AppInfo
-import com.js.deepsleep.db.entity.AppSt
-import com.js.deepsleep.db.entity.Extend
+import com.js.deepsleep.data.db.converter.Converters
+import com.js.deepsleep.data.db.dao.AppDao
+import com.js.deepsleep.data.db.dao.AppInfoDao
+import com.js.deepsleep.data.db.dao.AppStDao
+import com.js.deepsleep.data.db.dao.ExtendDao
+import com.js.deepsleep.data.db.entity.AppInfo
+import com.js.deepsleep.data.db.entity.AppSt
+import com.js.deepsleep.data.db.entity.Extend
 
 @Database(
     entities = [AppInfo::class, AppSt::class, Extend::class],

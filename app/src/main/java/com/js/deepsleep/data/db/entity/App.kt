@@ -1,4 +1,4 @@
-package com.js.deepsleep.db.entity
+package com.js.deepsleep.data.db.entity
 
 import androidx.room.Embedded
 import androidx.room.Relation

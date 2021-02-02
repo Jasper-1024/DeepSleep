@@ -1,9 +1,9 @@
-package com.js.deepsleep.db.dao
+package com.js.deepsleep.data.db.dao
 
 import androidx.room.Dao
 import androidx.room.Query
 import androidx.room.Transaction
-import com.js.deepsleep.db.entity.App
+import com.js.deepsleep.data.db.entity.App
 import kotlinx.coroutines.flow.Flow
 
 @Dao
