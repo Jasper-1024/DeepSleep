@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/extendFragment"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="@string/test"
+        android:visible="true"
+        tools:ignore="ExtraText" />
+
+</menu>
