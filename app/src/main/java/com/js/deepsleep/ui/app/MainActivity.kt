@@ -1,4 +1,4 @@
-package com.js.deepsleep.ui
+package com.js.deepsleep.ui.app
 
 import android.os.Bundle
 import android.view.Menu

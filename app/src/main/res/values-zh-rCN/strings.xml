@@ -7,4 +7,7 @@
     <string name="menu_filter_all">show all app</string>
     <string name="menu_filter_restricted">show restricted app</string>
     <string name="search_title">search</string>
+    <string name="wakelock">wakelock</string>
+    <string name="alarm">alarm</string>
+    <string name="server">server</string>
 </resources>

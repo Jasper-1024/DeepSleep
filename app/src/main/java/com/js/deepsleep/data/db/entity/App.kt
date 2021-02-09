@@ -10,5 +10,5 @@ data class App(
         parentColumn = "packageName",
         entityColumn = "packageName_st"
     )
-    var st: AppSt
+    var st: AppSt?
 )

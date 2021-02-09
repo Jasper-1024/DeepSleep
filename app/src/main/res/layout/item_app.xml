@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="item"
+            type="com.js.deepsleep.ui.app.ItemApp" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@{item.data.info.system? @color/SystemApp : @color/UserApp}"
+        android:padding="8dp">
+
+
+        <ImageView
+            android:id="@+id/ivExpander"
+            android:layout_width="30dp"
+            android:layout_height="?android:attr/listPreferredItemHeightSmall"
+            android:layout_marginStart="8dp"
+            android:alpha="0.5"
+            android:clickable="false"
+            android:focusable="false"
+            android:onClick="@{() -> item.handle.load(item)}"
+            android:src="@{item.load? @drawable/ic_outline_expand_less_24: @drawable/ic_baseline_expand_more_24}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription,OnClick" />
+
+        <ImageView
+            android:id="@+id/appListIcon"
+            android:layout_width="@android:dimen/app_icon_size"
+            android:layout_height="@android:dimen/app_icon_size"
+            android:layout_marginStart="8dp"
+            android:contentDescription="TODO"
+            app:layout_constraintBottom_toBottomOf="@+id/ivExpander"
+            app:layout_constraintStart_toEndOf="@+id/ivExpander"
+            app:loadIcon="@{item.data.info}"
+            tools:ignore="ContentDescription,HardcodedText,MissingConstraints" />
+
+
+        <TextView
+            android:id="@+id/appListPackageName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="0"
+            android:gravity="center_vertical"
+            android:text="@{item.data.info.label}"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/appListIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/appListIcon"
+            app:layout_constraintTop_toTopOf="@+id/appListIcon"
+            tools:ignore="MissingConstraints,SmallSp" />
+
+
+        <Switch
+            android:id="@+id/switch3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:checked="@={item.data.st.wakelock}"
+            android:onClick="@{() -> item.handle.save(item.data.st)}"
+            android:text="@string/wakelock"
+            android:textSize="16sp"
+            android:visibility="@{item.load? View.VISIBLE : View.GONE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivExpander"
+            app:layout_constraintTop_toBottomOf="@+id/appListIcon"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:checked="@={item.data.st.alarm}"
+            android:onClick="@{() -> item.handle.save(item.data.st)}"
+            android:text="@string/alarm"
+            android:textSize="16sp"
+            android:visibility="@{item.load? View.VISIBLE : View.GONE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/switch3"
+            app:layout_constraintTop_toBottomOf="@+id/switch3"
+            tools:ignore="RtlSymmetry,UseSwitchCompatOrMaterialXml" />
+
+        <Switch
+            android:id="@+id/switch2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:checked="@={item.data.st.server}"
+            android:onClick="@{() -> item.handle.save(item.data.st)}"
+            android:text="@string/server"
+            android:textSize="16sp"
+            android:visibility="@{item.load? View.VISIBLE : View.GONE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/switch1"
+            app:layout_constraintTop_toBottomOf="@+id/switch1"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

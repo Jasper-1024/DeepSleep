@@ -5,6 +5,7 @@ import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import androidx.collection.ArrayMap
 import com.js.deepsleep.BasicApp
+import com.js.deepsleep.base.LogUtil
 import com.js.deepsleep.data.db.dao.AppDao
 import com.js.deepsleep.data.db.dao.AppInfoDao
 import com.js.deepsleep.data.db.dao.AppStDao
@@ -13,6 +14,7 @@ import com.js.deepsleep.data.db.entity.AppInfo
 import com.js.deepsleep.data.db.entity.AppSt
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.withContext
 
 class AppAR(
@@ -24,7 +26,14 @@ class AppAR(
     private val pm: PackageManager = BasicApp.context.packageManager
 
     override fun getApps(): Flow<List<App>> {
-        return appDao.loadApps()
+        return appDao.loadApps().map { list ->
+            list.map {
+                if (it.st == null) {
+                    it.st = AppSt(it.info.packageName)
+                }
+                it
+            }
+        }
     }
 
     override suspend fun setAppSt(appSt: AppSt) {
@@ -69,6 +78,8 @@ class AppAR(
     private suspend fun getSysAppInfos(): ArrayMap<String, AppInfo> =
         withContext(Dispatchers.IO) {
             val sysAppInfo = ArrayMap<String, AppInfo>()
+
+            LogUtil.d("test2", "${pm.getInstalledApplications(0).size}")
 
             pm.getInstalledApplications(0).forEach {
                 sysAppInfo[it.packageName] = getSysAppInfo(it)

@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/appFragment"
-        android:name="com.js.deepsleep.AppFragment"
+        android:name="com.js.deepsleep.ui.app.AppFragment"
         android:label="fragment_app"
         tools:layout="@layout/fragment_app" />
     <fragment
         android:id="@+id/extendFragment"
-        android:name="com.js.deepsleep.extendFragment"
+        android:name="com.js.deepsleep.ui.extend.extendFragment"
         android:label="fragment_extend"
         tools:layout="@layout/fragment_extend" />
 </navigation>
