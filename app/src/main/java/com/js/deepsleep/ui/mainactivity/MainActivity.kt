@@ -1,9 +1,10 @@
-package com.js.deepsleep.ui.app
+package com.js.deepsleep.ui.mainactivity
 
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.fragment.NavHostFragment
@@ -11,12 +12,17 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
 import com.js.deepsleep.R
-import com.js.deepsleep.base.LogUtil
+import com.js.deepsleep.base.AppType
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.qualifier.named
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var toolbar: Toolbar
     private lateinit var drawerLayout: DrawerLayout
+
+    // mainVm
+    private val mainViewModel: MainViewModel by viewModel(named("MainVm"))
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,7 +48,6 @@ class MainActivity : AppCompatActivity() {
         drawerLayout.setStatusBarBackground(R.color.colorPrimaryDark)
         //Toolbar
         setSupportActionBar(toolbar)// toolbar 替换 ActionBar
-
     }
 
     //ToolBar menu
@@ -51,7 +56,45 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
-    fun test2(menu: MenuItem) {
-        LogUtil.d("test", "test2")
+    fun statusUser(menu: MenuItem) {
+        mainViewModel.type.postValue(AppType.User)
+        menu.isChecked = true
+    }
+
+    fun statusSystem(menu: MenuItem) {
+        mainViewModel.type.postValue(AppType.System)
+        menu.isChecked = true
+    }
+
+    fun statusAll(menu: MenuItem) {
+        mainViewModel.type.postValue(AppType.All)
+        menu.isChecked = true
+    }
+
+    fun statusRestricted(menu: MenuItem) {
+        mainViewModel.type.postValue(AppType.Restricted)
+        menu.isChecked = true
+    }
+
+    override fun onPrepareOptionsMenu(menu: Menu): Boolean {
+        // 搜索栏
+        val searchView = menu.findItem(R.id.search).actionView as SearchView
+        setSearchView(searchView)
+        return super.onPrepareOptionsMenu(menu)
+    }
+
+    private fun setSearchView(searchView: SearchView) {
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+                mainViewModel.query.postValue(query)
+                searchView.clearFocus()
+                return true
+            }
+
+            override fun onQueryTextChange(query: String): Boolean {
+                mainViewModel.query.postValue(query)
+                return true
+            }
+        })
     }
 }

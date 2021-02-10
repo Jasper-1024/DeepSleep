@@ -10,7 +10,6 @@
         <variable
             name="item"
             type="com.js.deepsleep.ui.app.ItemApp" />
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

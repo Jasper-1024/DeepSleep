@@ -4,8 +4,8 @@ import com.js.deepsleep.data.db.AppDatabase
 import com.js.deepsleep.data.repository.app.AppAR
 import com.js.deepsleep.data.repository.app.AppRepo
 import com.js.deepsleep.ui.app.AppViewModel
+import com.js.deepsleep.ui.mainactivity.MainViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
-import org.koin.core.component.KoinApiExtension
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
 
@@ -22,11 +22,15 @@ var repository = module {
 
 }
 
-@OptIn(KoinApiExtension::class)
 var viewModel = module {
 
     viewModel(named("AppVm")) {
         AppViewModel()
+    }
+
+    // MainViewModel
+    viewModel(named("MainVm")) {
+        MainViewModel()
     }
 
     /** AppInfoRepository */

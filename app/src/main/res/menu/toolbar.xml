@@ -12,23 +12,29 @@
                 android:checkableBehavior="single">
                 <item
                     android:id="@+id/menu_filter_user"
-                    android:onClick="test2"
+                    android:onClick="statusUser"
                     android:title="@string/menu_filter_user" />
                 <item
                     android:id="@+id/menu_filter_system"
+                    android:onClick="statusSystem"
                     android:title="@string/menu_filter_system" />
 
                 <item
                     android:id="@+id/menu_filter_all"
+                    android:onClick="statusAll"
                     android:title="@string/menu_filter_all"
                     android:visible="false" />
 
                 <item
                     android:id="@+id/menu_sort_name"
+                    android:onClick="statusRestricted"
                     android:title="@string/menu_filter_restricted" />
 
-                <!--                android:checkable="true"-->
-                <!--                android:onClick="sortName"-->
+                <!--                <item-->
+                <!--                    android:id="@+id/menu_sort_count"-->
+                <!--                    android:checkable="true"-->
+                <!--                    android:onClick="sortCount"-->
+                <!--                    android:title="@string/menu_filter_count" />-->
 
             </group>
         </menu>
