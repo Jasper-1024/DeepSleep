@@ -50,6 +50,7 @@ class AppViewModel : ViewModel(), KoinComponent {
 
     val apps = appAR.getApps().asLiveData()
 
+    // recyclerview 的 list
     var list = MediatorLiveData<List<ItemApp>>()
 
     fun getList(apps: List<App>, type: AppType, query: String, sort: Sort): List<ItemApp> {
