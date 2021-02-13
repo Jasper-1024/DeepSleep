@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.annotation.VisibleForTesting
 import com.js.deepsleep.base.LogUtil
 import com.js.deepsleep.data.db.AppDatabase
+import kotlinx.coroutines.runBlocking
 
 class ProviderHandler(
     context: Context
@@ -27,13 +28,14 @@ class ProviderHandler(
 
     fun getMethod(methodName: String, bundle: Bundle): Bundle? {
         return when (methodName) {
+            ProviderMethod.GetAppSt.value -> getAppSt(bundle)
             "test" -> test(bundle)
             else -> null
         }
     }
 
     @VisibleForTesting
-    fun test(bundle: Bundle): Bundle? {
+    fun test(bundle: Bundle): Bundle {
         val test = bundle.get("Test") as String?
 
         LogUtil.d(tag, "$test")
@@ -42,4 +44,20 @@ class ProviderHandler(
         tmp.putString("Test", "Test")
         return tmp
     }
+
+    private fun getAppSt(bundle: Bundle): Bundle {
+        val packageName: String = bundle.getString(PParameters.packageName, "")
+        val tmp = runBlocking {
+            try {
+                db.appStDao().AppSt(packageName)
+            } catch (e: Exception) {
+                null
+            }
+        }
+        return Bundle().apply {
+            this.putSerializable(PParameters.appSt, tmp)
+        }
+    }
+
+
 }
