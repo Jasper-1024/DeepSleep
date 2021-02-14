@@ -30,7 +30,7 @@ class ItemApp(
 
     // 获取 appSt 的不同
     private fun getStContent(appSt: AppSt): Int {
-        return getFlag(appSt.alarm) + getFlag(appSt.wakelock) * 2 + getFlag(appSt.server) * 4
+        return getFlag(appSt.alarm) + getFlag(appSt.wakelock) * 2 + getFlag(appSt.service) * 4
     }
 
     private fun getFlag(boolean: Boolean): Int {

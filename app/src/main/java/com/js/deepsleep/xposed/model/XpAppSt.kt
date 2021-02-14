@@ -2,6 +2,7 @@ package com.js.deepsleep.xposed.model
 
 import android.content.Context
 import android.os.Bundle
+import com.js.deepsleep.base.Type
 import com.js.deepsleep.data.db.entity.AppSt
 import com.js.deepsleep.data.provider.PParameters
 import com.js.deepsleep.data.provider.ProviderMethod
@@ -18,7 +19,7 @@ class XpAppSt(private val packageName: String) {
         @Volatile
         private var instance: XpAppSt? = null
 
-        fun getInstance(packageName: String) = instance ?: synchronized(this) {
+        fun getInstance(packageName: String = "") = instance ?: synchronized(this) {
             XpAppSt(packageName).also {
                 instance = it
             }
@@ -41,6 +42,14 @@ class XpAppSt(private val packageName: String) {
             } catch (e: Exception) {
                 XpUtil.log("getSt err: $e")
             }
+        }
+    }
+
+    fun block(type: Type, mPackageName: String, mTag: String): Boolean {
+        return when (type) {
+            Type.Wakelock -> appSt.wakelock
+            Type.Alarm -> appSt.alarm
+            Type.Service -> appSt.service
         }
     }
 }

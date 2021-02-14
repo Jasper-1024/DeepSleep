@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "19b2df995392c3109b9d81232a5924d0",
+    "identityHash": "b49fd82172410188d7a1dec7d8121e2d",
     "entities": [
       {
         "tableName": "appInfo",
@@ -68,7 +68,7 @@
       },
       {
         "tableName": "appSt",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`packageName_st` TEXT NOT NULL, `flag` INTEGER NOT NULL, `wakelock` INTEGER NOT NULL, `alarm` INTEGER NOT NULL, `server` INTEGER NOT NULL, PRIMARY KEY(`packageName_st`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`packageName_st` TEXT NOT NULL, `flag` INTEGER NOT NULL, `wakelock` INTEGER NOT NULL, `alarm` INTEGER NOT NULL, `service` INTEGER NOT NULL, PRIMARY KEY(`packageName_st`))",
         "fields": [
           {
             "fieldPath": "packageName",
@@ -95,8 +95,8 @@
             "notNull": true
           },
           {
-            "fieldPath": "server",
-            "columnName": "server",
+            "fieldPath": "service",
+            "columnName": "service",
             "affinity": "INTEGER",
             "notNull": true
           }
@@ -159,7 +159,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '19b2df995392c3109b9d81232a5924d0')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'b49fd82172410188d7a1dec7d8121e2d')"
     ]
   }
 }

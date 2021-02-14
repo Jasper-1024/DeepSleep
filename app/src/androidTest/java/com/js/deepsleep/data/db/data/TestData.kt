@@ -10,12 +10,12 @@ class TestData {
         const val alarm = "alarm"
         const val server = "server"
 
-        val appSt = AppSt(packageName = packageName, wakelock = true, alarm = true, server = true)
+        val appSt = AppSt(packageName = packageName, wakelock = true, alarm = true, service = true)
 
         val appSts: List<AppSt> = listOf(
-            AppSt(packageName = packageName, wakelock = false, alarm = false, server = false),
-            AppSt(packageName = "test2", wakelock = true, alarm = true, server = true),
-            AppSt(packageName = "test3", wakelock = true, alarm = true, server = true)
+            AppSt(packageName = packageName, wakelock = false, alarm = false, service = false),
+            AppSt(packageName = "test2", wakelock = true, alarm = true, service = true),
+            AppSt(packageName = "test3", wakelock = true, alarm = true, service = true)
         )
 
         val extend = Extend(

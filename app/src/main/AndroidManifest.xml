@@ -20,7 +20,7 @@
             android:name=".data.provider.DSContentProvider"
             android:authorities="com.js.deepsleep"
             android:enabled="true"
-            android:exported="false" />
+            android:exported="true" />
 
 
         <meta-data

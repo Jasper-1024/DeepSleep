@@ -95,7 +95,7 @@
             android:id="@+id/switch2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:checked="@={item.data.st.server}"
+            android:checked="@={item.data.st.service}"
             android:onClick="@{() -> item.handle.save(item.data.st)}"
             android:text="@string/server"
             android:textSize="16sp"
