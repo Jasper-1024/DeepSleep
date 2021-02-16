@@ -1,4 +1,4 @@
-package com.js.deepsleep.ui.extend
+package com.js.deepsleep.ui.extend.fbase
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,16 +8,14 @@ import androidx.fragment.app.Fragment
 import com.js.deepsleep.R
 
 
-class ExtendFragment : Fragment() {
+class FBaseFragment : Fragment() {
 
-    private lateinit var packageName: String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // 获取 packageName
-        packageName = arguments?.getString("packageName") ?: ""
-        return inflater.inflate(R.layout.fragment_extend, container, false)
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_fbase, container, false)
     }
 }

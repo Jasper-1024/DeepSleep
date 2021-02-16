@@ -77,7 +77,7 @@ class AppFragment : Fragment() {
         }
     }
 
-    //viewModel.list 添加订阅
+    //viewModel.list 取消订阅
     private fun <S> removeSubscription(liveData: LiveData<S>) {
         viewModel.list.removeSource(liveData)
     }
@@ -111,6 +111,7 @@ class AppFragment : Fragment() {
         }
     }
 
+    // 分割线
     private fun setItemDecoration(recyclerView: RecyclerView) = recyclerView.addItemDecoration(
         DividerItemDecoration(
             recyclerView.context,
