@@ -42,7 +42,7 @@ class AppViewModel : ViewModel(), KoinComponent {
     fun saveSt(appSt: AppSt) {
         viewModelScope.launch(Dispatchers.Default) {
             appSt.let {
-                it.flag = it.wakelock || it.alarm || it.service
+                it.flag = it.wakelock || it.alarm || it.service || it.sync
             }
             appAR.setAppSt(appSt)
         }

@@ -50,6 +50,7 @@ class XpAppSt(private val packageName: String) {
             Type.Wakelock -> appSt.wakelock
             Type.Alarm -> appSt.alarm
             Type.Service -> appSt.service
+            Type.Sync -> appSt.sync
         }
     }
 }

@@ -1,9 +1,6 @@
 package com.js.deepsleep.xposed
 
-import com.js.deepsleep.xposed.hook.Alarm
-import com.js.deepsleep.xposed.hook.ServiceXp
-import com.js.deepsleep.xposed.hook.Wakelock
-import com.js.deepsleep.xposed.hook.XpContext
+import com.js.deepsleep.xposed.hook.*
 import com.js.deepsleep.xposed.model.XpAppSt
 import de.robv.android.xposed.IXposedHookLoadPackage
 import de.robv.android.xposed.IXposedHookZygoteInit
@@ -28,8 +25,9 @@ class XposedModule : IXposedHookZygoteInit, IXposedHookLoadPackage {
             XpUtil.log("get context err $e")
         }
 
-        Wakelock.hook(lpparam)
-        Alarm.hook(lpparam)
+        WakelockXp.hook(lpparam)
+        AlarmXp.hook(lpparam)
         ServiceXp.hook(lpparam)
+        SyncXp.hook(lpparam)
     }
 }

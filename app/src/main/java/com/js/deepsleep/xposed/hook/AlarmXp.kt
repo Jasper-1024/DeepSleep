@@ -13,7 +13,7 @@ import de.robv.android.xposed.XposedBridge
 import de.robv.android.xposed.XposedHelpers
 import de.robv.android.xposed.callbacks.XC_LoadPackage
 
-class Alarm {
+class AlarmXp {
     companion object {
 
         private var pendingIntent: Class<*>? = null

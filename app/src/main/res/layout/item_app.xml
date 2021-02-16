@@ -67,7 +67,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:checked="@={item.data.st.wakelock}"
+            android:checked="@={!item.data.st.wakelock}"
             android:onClick="@{() -> item.handle.save(item.data.st)}"
             android:text="@string/wakelock"
             android:textSize="16sp"
@@ -81,7 +81,7 @@
             android:id="@+id/switch1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:checked="@={item.data.st.alarm}"
+            android:checked="@={!item.data.st.alarm}"
             android:onClick="@{() -> item.handle.save(item.data.st)}"
             android:text="@string/alarm"
             android:textSize="16sp"
@@ -95,7 +95,7 @@
             android:id="@+id/switch2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:checked="@={item.data.st.service}"
+            android:checked="@={!item.data.st.service}"
             android:onClick="@{() -> item.handle.save(item.data.st)}"
             android:text="@string/server"
             android:textSize="16sp"
@@ -104,6 +104,20 @@
             app:layout_constraintStart_toStartOf="@+id/switch1"
             app:layout_constraintTop_toBottomOf="@+id/switch1"
             tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <Switch
+            android:id="@+id/switch4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:checked="@={!item.data.st.sync}"
+            android:onClick="@{() -> item.handle.save(item.data.st)}"
+            android:text="@string/sync"
+            android:textSize="16sp"
+            android:visibility="@{item.load? View.VISIBLE : View.GONE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/switch2"
+            app:layout_constraintTop_toBottomOf="@+id/switch2"
+            tools:ignore="MissingConstraints,UseSwitchCompatOrMaterialXml" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

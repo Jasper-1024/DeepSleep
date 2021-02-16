@@ -14,4 +14,5 @@
     <string name="alarm">alarm</string>
     <string name="server">server</string>
     <string name="xposeddescription">an test module</string>
+    <string name="sync">sync</string>
 </resources>

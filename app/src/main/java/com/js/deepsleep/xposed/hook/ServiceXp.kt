@@ -27,14 +27,14 @@ class ServiceXp {
 
             val tmp: Class<*>? = XpUtil.getClass("android.app.ContextImpl", lpparam.classLoader)
             tmp?.let {
-                XposedBridge.hookAllMethods(it, "startServiceCommon", Test())
+                XposedBridge.hookAllMethods(it, "startServiceCommon", HandleService())
 //                XposedBridge.hookAllMethods(it, " bindServiceCommon", Test2())
             }
 
         }
     }
 
-    class Test : XC_MethodHook() {
+    class HandleService : XC_MethodHook() {
 //        @Throws(Throwable::class)
 //        override fun beforeHookedMethod(param: MethodHookParam) {
 //            XpUtil.log("service hook")
@@ -81,19 +81,19 @@ class ServiceXp {
 //    }
 
 
-    class HandleService : XC_MethodHook() {
-        @Throws(Throwable::class)
-        override fun beforeHookedMethod(param: MethodHookParam) {
-            XpUtil.log("service hook")
-
-//            if (param.args[0] == null) return
-//            if (param.args[0] !is Intent) return
+//    class HandleService : XC_MethodHook() {
+//        @Throws(Throwable::class)
+//        override fun beforeHookedMethod(param: MethodHookParam) {
+//            XpUtil.log("service hook")
 //
-//            XpUtil.run("service hook") {
-//                val serviceName = (param.args[0] as Intent).action ?: "null"
-//                XpUtil.log("service $serviceName")
-//            }
-        }
-    }
+////            if (param.args[0] == null) return
+////            if (param.args[0] !is Intent) return
+////
+////            XpUtil.run("service hook") {
+////                val serviceName = (param.args[0] as Intent).action ?: "null"
+////                XpUtil.log("service $serviceName")
+////            }
+//        }
+//    }
 
 }

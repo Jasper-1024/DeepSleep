@@ -13,5 +13,6 @@ data class AppSt(
     var flag: Boolean = false,//仅标记应用是否有限制
     var wakelock: Boolean = false,
     var alarm: Boolean = false,
-    var service: Boolean = false
+    var service: Boolean = false,
+    var sync: Boolean = false
 ) : Serializable

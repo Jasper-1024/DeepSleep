@@ -8,7 +8,7 @@ import de.robv.android.xposed.XC_MethodHook
 import de.robv.android.xposed.XposedHelpers
 import de.robv.android.xposed.callbacks.XC_LoadPackage
 
-class Wakelock {
+class WakelockXp {
     companion object {
         fun hook(lpparam: XC_LoadPackage.LoadPackageParam) {
             XposedHelpers.findAndHookMethod(
