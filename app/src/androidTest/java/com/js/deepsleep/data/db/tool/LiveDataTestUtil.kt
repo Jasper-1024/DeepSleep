@@ -1,4 +1,4 @@
-package com.js.nowakelock.tool
+package com.js.deepsleep.data.db.tool
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer

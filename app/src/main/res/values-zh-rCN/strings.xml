@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">DeepSleep</string>
+    <string name="test">Test</string>
+    <string name="navigation_view_header_title">Test</string>
 
     <string name="menu_filter">filter</string>
     <string name="menu_filter_user">show user app</string>
@@ -7,9 +10,11 @@
     <string name="menu_filter_all">show all app</string>
     <string name="menu_filter_restricted">show restricted app</string>
     <string name="search_title">search</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="wakelock">wakelock</string>
     <string name="alarm">alarm</string>
     <string name="server">server</string>
     <string name="xposeddescription">an test module</string>
     <string name="sync">sync</string>
+    <string name="active">Module is not active</string>
 </resources>

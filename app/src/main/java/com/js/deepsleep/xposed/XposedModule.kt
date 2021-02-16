@@ -1,5 +1,6 @@
 package com.js.deepsleep.xposed
 
+import com.js.deepsleep.BuildConfig
 import com.js.deepsleep.xposed.hook.*
 import com.js.deepsleep.xposed.model.XpAppSt
 import de.robv.android.xposed.IXposedHookLoadPackage
@@ -15,19 +16,23 @@ class XposedModule : IXposedHookZygoteInit, IXposedHookLoadPackage {
 
     override fun handleLoadPackage(lpparam: XC_LoadPackage.LoadPackageParam) {
         XpUtil.packageName = lpparam.packageName
-
         XpAppSt.getInstance(lpparam.packageName)
 
-        // 获取 AppSt 设置
-        try {
-            XpContext.hook { XpAppSt.getInstance().getSt(it) }
-        } catch (e: Throwable) {
-            XpUtil.log("get context err $e")
-        }
+        // hook deepsleep
+        if (lpparam.packageName == BuildConfig.APPLICATION_ID) {
+            SelfXp.hook(lpparam)
+        } else {
+            // 获取 AppSt 设置
+            try {
+                XpContext.hook { XpAppSt.getInstance().getSt(it) }
+            } catch (e: Throwable) {
+                XpUtil.log("get context err $e")
+            }
 
-        WakelockXp.hook(lpparam)
-        AlarmXp.hook(lpparam)
-        ServiceXp.hook(lpparam)
-        SyncXp.hook(lpparam)
+            WakelockXp.hook(lpparam)
+            AlarmXp.hook(lpparam)
+            ServiceXp.hook(lpparam)
+            SyncXp.hook(lpparam)
+        }
     }
 }

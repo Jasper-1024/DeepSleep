@@ -3,6 +3,7 @@ package com.js.deepsleep.ui.mainactivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
@@ -17,6 +18,11 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.qualifier.named
 
 class MainActivity : AppCompatActivity() {
+
+    // 检查模块是否激活
+    private fun isModuleActive(): Boolean {
+        return false
+    }
 
     private lateinit var toolbar: Toolbar
     private lateinit var drawerLayout: DrawerLayout
@@ -48,6 +54,11 @@ class MainActivity : AppCompatActivity() {
         drawerLayout.setStatusBarBackground(R.color.colorPrimaryDark)
         //Toolbar
         setSupportActionBar(toolbar)// toolbar 替换 ActionBar
+
+        //检查模块是否激活
+        if (!isModuleActive()) {
+            Toast.makeText(this, getString(R.string.active), Toast.LENGTH_LONG).show()
+        }
     }
 
     //ToolBar menu

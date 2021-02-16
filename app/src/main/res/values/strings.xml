@@ -8,11 +8,11 @@
     <string name="menu_filter_all">show all app</string>
     <string name="menu_filter_restricted">show restricted app</string>
     <string name="search_title">search</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="wakelock">wakelock</string>
     <string name="alarm">alarm</string>
     <string name="server">server</string>
     <string name="xposeddescription">an test module</string>
     <string name="sync">sync</string>
+    <string name="active">Module is not active</string>
 </resources>

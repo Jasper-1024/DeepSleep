@@ -46,40 +46,6 @@ object DataBind {
 }
 
 
-object Converter {
-//    @JvmStatic
-//    @InverseMethod("stringToLong")
-//    fun longToString(value: Long): String {
-//        return if (value == 0.toLong()) {
-//            ""
-//        } else {
-//            value.toString()
-//        }
-//    }
-//
-//    @JvmStatic
-//    fun stringToLong(value: String): Long {
-//        // Converts String to long.
-//        return if (value == "") {
-//            0
-//        } else {
-//            value.toLong()
-//        }
-//    }
-//
-//    @InverseMethod("stringToSet")
-//    @JvmStatic
-//    fun setToString(values: Set<String>?): String? {
-//        return Util.setToString(values)
-//    }
-//
-//    @JvmStatic
-//    fun stringToSet(value: String?): Set<String>? {
-//        return Util.stringToSet(value)
-//    }
-}
-
-
 
 
 

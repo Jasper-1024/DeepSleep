@@ -37,7 +37,7 @@ object XpUtil {
         return try {
             XposedHelpers.findClass(name, classLoader)
         } catch (e: Throwable) {
-            XpUtil.log("alarm getClass err: $e")
+            log("alarm getClass err: $e")
             null
         }
     }
