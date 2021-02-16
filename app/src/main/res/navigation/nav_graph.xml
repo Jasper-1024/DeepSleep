@@ -9,19 +9,21 @@
         android:id="@+id/appFragment"
         android:name="com.js.deepsleep.ui.app.AppFragment"
         android:label="DeepSleep"
-        tools:layout="@layout/fragment_app" />
+        tools:layout="@layout/fragment_app">
+        <argument
+            android:name="packageName"
+            android:defaultValue='""'
+            app:argType="string" />
+        <argument
+            android:name="label"
+            android:defaultValue='""'
+            app:argType="string" />
+    </fragment>
 
     <fragment
         android:id="@+id/extendFragment"
-        android:name="com.js.deepsleep.ui.extend.extendFragment"
-        android:label="{label}"
+        android:name="com.js.deepsleep.ui.extend.ExtendFragment"
+        android:label="fragment_extend"
         tools:layout="@layout/fragment_extend" />
-    <argument
-        android:name="packageName"
-        android:defaultValue='""'
-        app:argType="string" />
-    <argument
-        android:name="label"
-        android:defaultValue='""'
-        app:argType="string" />
+
 </navigation>

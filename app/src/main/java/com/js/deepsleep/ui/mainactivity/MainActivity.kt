@@ -38,22 +38,18 @@ class MainActivity : AppCompatActivity() {
         drawerLayout = findViewById(R.id.drawer_layout)
         toolbar = findViewById(R.id.toolbar)
 
-//        val navController = findNavController(R.id.nav_host_fragment)
-
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
 
         val appBarConfiguration = AppBarConfiguration(setOf(R.id.appFragment), drawerLayout)
 
-        toolbar.setupWithNavController(navController, appBarConfiguration)
-
-        findViewById<NavigationView>(R.id.nav_view).setupWithNavController(navController)
-
-        //设置侧边栏颜色
-        drawerLayout.setStatusBarBackground(R.color.colorPrimaryDark)
-        //Toolbar
         setSupportActionBar(toolbar)// toolbar 替换 ActionBar
+        drawerLayout.setStatusBarBackground(R.color.colorPrimaryDark)//设置侧边栏颜色
+
+        /* 设置导航组件,一定要在 setSupportActionBar 之后 */
+        toolbar.setupWithNavController(navController, appBarConfiguration)
+        findViewById<NavigationView>(R.id.nav_view).setupWithNavController(navController)//设置导航组件
 
         //检查模块是否激活
         if (!isModuleActive()) {

@@ -10,7 +10,6 @@ import com.js.deepsleep.R
 
 class ExtendFragment : Fragment() {
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -18,5 +17,4 @@ class ExtendFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_extend, container, false)
     }
-
 }

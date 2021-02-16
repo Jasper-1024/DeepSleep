@@ -31,6 +31,14 @@ class AppFragment : Fragment() {
 
     private val mainViewModel: MainViewModel by sharedViewModel(named("MainVm"))
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        addSubscription(viewModel.apps)
+        addSubscription(mainViewModel.type)
+        addSubscription(mainViewModel.query)
+        addSubscription(mainViewModel.sort)
+    }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -52,14 +60,12 @@ class AppFragment : Fragment() {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        addSubscription(viewModel.apps)
-        addSubscription(mainViewModel.type)
-        addSubscription(mainViewModel.query)
-        addSubscription(mainViewModel.sort)
-
+    override fun onDestroy() {
+        super.onDestroy()
+        removeSubscription(viewModel.apps)
+        removeSubscription(mainViewModel.type)
+        removeSubscription(mainViewModel.query)
+        removeSubscription(mainViewModel.sort)
     }
 
     //viewModel.list 添加订阅
@@ -69,6 +75,11 @@ class AppFragment : Fragment() {
                 viewModel.list.postValue(list() ?: list())
             }
         }
+    }
+
+    //viewModel.list 添加订阅
+    private fun <S> removeSubscription(liveData: LiveData<S>) {
+        viewModel.list.removeSource(liveData)
     }
 
     //读取值

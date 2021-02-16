@@ -5,16 +5,16 @@
     <string name="navigation_view_header_title">Test</string>
 
     <string name="menu_filter">filter</string>
-    <string name="menu_filter_user">show user app</string>
-    <string name="menu_filter_system">show system app</string>
-    <string name="menu_filter_all">show all app</string>
-    <string name="menu_filter_restricted">show restricted app</string>
-    <string name="search_title">search</string>
+    <string name="menu_filter_user">用户应用</string>
+    <string name="menu_filter_system">系统应用</string>
+    <string name="menu_filter_all">全应用</string>
+    <string name="menu_filter_restricted">已限制应用</string>
+    <string name="search_title">搜索</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="wakelock">wakelock</string>
-    <string name="alarm">alarm</string>
-    <string name="server">server</string>
-    <string name="xposeddescription">an test module</string>
-    <string name="sync">sync</string>
-    <string name="active">Module is not active</string>
+    <string name="wakelock">唤醒锁</string>
+    <string name="alarm">闹钟</string>
+    <string name="server">服务</string>
+    <string name="sync">同步</string>
+    <string name="xposeddescription">控制唤醒锁,闹钟,服务,同步等</string>
+    <string name="active">模块未激活</string>
 </resources>
