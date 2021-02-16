@@ -5,6 +5,7 @@ import android.net.Uri
 import android.os.Bundle
 import com.js.deepsleep.data.provider.ProviderMethod
 import de.robv.android.xposed.XposedBridge
+import de.robv.android.xposed.XposedHelpers
 
 
 object XpUtil {
@@ -29,6 +30,23 @@ object XpUtil {
         } catch (e: Exception) {
             log(": record $method err: $e")
             null
+        }
+    }
+
+    fun getClass(name: String, classLoader: ClassLoader): Class<*>? {
+        return try {
+            XposedHelpers.findClass(name, classLoader)
+        } catch (e: Throwable) {
+            XpUtil.log("alarm getClass err: $e")
+            null
+        }
+    }
+
+    fun run(name: String, function: () -> Unit) {
+        try {
+            function()
+        } catch (e: Throwable) {
+            log("$name err: $e")
         }
     }
 }

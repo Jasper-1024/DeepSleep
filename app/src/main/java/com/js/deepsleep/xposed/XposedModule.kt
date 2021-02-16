@@ -1,5 +1,7 @@
 package com.js.deepsleep.xposed
 
+import com.js.deepsleep.xposed.hook.Alarm
+import com.js.deepsleep.xposed.hook.ServiceXp
 import com.js.deepsleep.xposed.hook.Wakelock
 import com.js.deepsleep.xposed.hook.XpContext
 import com.js.deepsleep.xposed.model.XpAppSt
@@ -27,5 +29,7 @@ class XposedModule : IXposedHookZygoteInit, IXposedHookLoadPackage {
         }
 
         Wakelock.hook(lpparam)
+        Alarm.hook(lpparam)
+        ServiceXp.hook(lpparam)
     }
 }

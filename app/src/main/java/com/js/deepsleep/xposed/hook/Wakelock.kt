@@ -25,6 +25,15 @@ class Wakelock {
                 Long::class.java,
                 HandleWakelock()
             )
+
+//            XposedHelpers.findAndHookMethod(
+//                "android.os.PowerManager",
+//                lpparam.classLoader,
+//                "newWakeLock",
+//                Int::class.java,
+//                String::class.java,
+//                HandleWakelock()
+//            )
         }
 
     }
@@ -44,7 +53,7 @@ class Wakelock {
             //非关键应用               和 设置禁止
             if (!major(mPackageName) && xpAppSt.block(Type.Wakelock, mPackageName, mTag)) {
                 param.result = null
-                XpUtil.log("block $mTag")
+                XpUtil.log("wakelock block $mTag")
             }
 
         }
