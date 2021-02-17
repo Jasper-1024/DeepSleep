@@ -8,6 +8,7 @@ import com.js.deepsleep.data.repository.extend.ER
 import com.js.deepsleep.data.repository.extend.ExtendRepo
 import com.js.deepsleep.ui.app.AppViewModel
 import com.js.deepsleep.ui.extend.fbase.FBaseViewModel
+import com.js.deepsleep.ui.help.HelpViewModel
 import com.js.deepsleep.ui.mainactivity.MainViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.qualifier.named
@@ -60,6 +61,10 @@ var viewModel = module {
                 else -> get(named("wakelockER"))
             }
         )
+    }
+
+    viewModel(named("HelpVm")) {
+        HelpViewModel()
     }
 
 //    // WakeLockVm
