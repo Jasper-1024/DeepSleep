@@ -17,4 +17,8 @@
     <string name="sync">同步</string>
     <string name="xposeddescription">控制唤醒锁,闹钟,服务,同步等</string>
     <string name="active">模块未激活</string>
+    <string name="Save">保存</string>
+    <string name="allowList">白名单</string>
+    <string name="blockList">黑名单</string>
+    <string name="rE">拦截-正则表达式</string>
 </resources>

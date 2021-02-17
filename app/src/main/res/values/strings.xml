@@ -15,4 +15,8 @@
     <string name="xposeddescription">an test module</string>
     <string name="sync">sync</string>
     <string name="active">Module is not active</string>
+    <string name="Save">Save</string>
+    <string name="allowList">AllowList</string>
+    <string name="blockList">BlockList</string>
+    <string name="rE">Regular expression</string>
 </resources>

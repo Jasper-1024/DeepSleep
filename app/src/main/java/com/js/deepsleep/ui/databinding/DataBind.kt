@@ -4,6 +4,7 @@ import android.R
 import android.net.Uri
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
+import androidx.databinding.InverseMethod
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DecodeFormat
@@ -41,9 +42,40 @@ object DataBind {
         // items 为空 orEmpty 返回空实例
         adapter.submitList(items.orEmpty())
     }
+}
+
+object Converter {
+
+    @InverseMethod("stringToSet")
+    @JvmStatic
+    fun setToString(values: Set<String>?): String {
+        return if (values == null || values.isEmpty()) {
+            "\n"
+        } else {
+            var tmp = ""
+            values.forEach {
+                tmp += "$it\n"
+            }
+//            tmp = tmp.substring(0, tmp.length - 1)
+            tmp
+        }
+    }
+
+    @JvmStatic
+    fun stringToSet(value: String?): Set<String> {
+        return if (value == null || value == "\n") {
+            mutableSetOf()
+        } else {
+            value.split("\n")
+                .filter { it.matches(Regex("[^\n ]+")) }
+                .toSet()
+//            value.split('\n').toSet()
+        }
+    }
 
 
 }
+
 
 
 

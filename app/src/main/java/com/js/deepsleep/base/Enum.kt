@@ -1,6 +1,6 @@
 package com.js.deepsleep.base
 
-enum class Type(value: String) {
+enum class Type(var value: String) {
     Wakelock("Wakelock"), Alarm("Alarm"), Service("Service"), Sync("Sync")
 }
 

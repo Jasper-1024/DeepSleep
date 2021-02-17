@@ -4,7 +4,9 @@ import android.content.Context
 import android.os.Bundle
 import androidx.annotation.VisibleForTesting
 import com.js.deepsleep.base.LogUtil
+import com.js.deepsleep.base.Type
 import com.js.deepsleep.data.db.AppDatabase
+import com.js.deepsleep.data.db.entity.Extend
 import kotlinx.coroutines.runBlocking
 
 class ProviderHandler(
@@ -29,6 +31,7 @@ class ProviderHandler(
     fun getMethod(methodName: String, bundle: Bundle): Bundle? {
         return when (methodName) {
             ProviderMethod.GetAppSt.value -> getAppSt(bundle)
+            ProviderMethod.GetExtends.value -> getExtends(bundle)
             "test" -> test(bundle)
             else -> null
         }
@@ -45,8 +48,9 @@ class ProviderHandler(
         return tmp
     }
 
+    // 获取 appst
     private fun getAppSt(bundle: Bundle): Bundle {
-        val packageName: String = bundle.getString(PParameters.packageName, "")
+        val packageName: String = getPackageName(bundle)
         val tmp = runBlocking {
             try {
                 db.appStDao().AppSt(packageName)
@@ -59,5 +63,33 @@ class ProviderHandler(
         }
     }
 
+    private fun getExtends(bundle: Bundle): Bundle {
+        val packageName: String = getPackageName(bundle)
+
+        val wakelockEx = runBlocking {
+            getExtend(packageName, Type.Wakelock)
+        }
+
+        val alarmEx = runBlocking {
+            getExtend(packageName, Type.Alarm)
+        }
+
+        return Bundle().apply {
+            this.putSerializable(PParameters.wakelock, wakelockEx)
+            this.putSerializable(PParameters.alarm, alarmEx)
+        }
+    }
+
+    private fun getPackageName(bundle: Bundle): String {
+        return bundle.getString(PParameters.packageName, "")
+    }
+
+    private suspend fun getExtend(packageName: String, type: Type): Extend? {
+        return try {
+            db.extendDao().Extend(packageName, type.value)
+        } catch (e: Exception) {
+            null
+        }
+    }
 
 }

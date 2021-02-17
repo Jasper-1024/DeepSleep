@@ -6,8 +6,12 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface ExtendDao {
+
+//    @Query("select * from extend where type = :type")
+//    fun loadExtends(type: String): Flow<Extend>
+
     @Query("select * from extend where packageName_ex = :packageName and type = :type")
-    fun loadExtend(packageName: String, type: String): Flow<Extend>
+    fun loadExtend(packageName: String, type: String): Flow<Extend?>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(extend: Extend)

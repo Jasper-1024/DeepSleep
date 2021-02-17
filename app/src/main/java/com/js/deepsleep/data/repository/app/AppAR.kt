@@ -5,7 +5,6 @@ import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import androidx.collection.ArrayMap
 import com.js.deepsleep.BasicApp
-import com.js.deepsleep.base.LogUtil
 import com.js.deepsleep.data.db.dao.AppDao
 import com.js.deepsleep.data.db.dao.AppInfoDao
 import com.js.deepsleep.data.db.dao.AppStDao
@@ -79,7 +78,7 @@ class AppAR(
         withContext(Dispatchers.IO) {
             val sysAppInfo = ArrayMap<String, AppInfo>()
 
-            LogUtil.d("test2", "${pm.getInstalledApplications(0).size}")
+//            LogUtil.d("test2", "${pm.getInstalledApplications(0).size}")
 
             pm.getInstalledApplications(0).forEach {
                 sysAppInfo[it.packageName] = getSysAppInfo(it)

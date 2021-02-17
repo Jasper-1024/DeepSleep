@@ -2,6 +2,7 @@ package com.js.deepsleep.data.db.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import java.io.Serializable
 
 @Entity(tableName = "extend", primaryKeys = ["packageName_ex", "type"])
 data class Extend(
@@ -11,4 +12,4 @@ data class Extend(
     var allowList: Set<String> = mutableSetOf(),
     var blockList: Set<String> = mutableSetOf(),
     var rE: Set<String> = mutableSetOf()
-)
+) : Serializable

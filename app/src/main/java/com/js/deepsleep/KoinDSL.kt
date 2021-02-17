@@ -1,9 +1,13 @@
 package com.js.deepsleep
 
+import com.js.deepsleep.base.Type
 import com.js.deepsleep.data.db.AppDatabase
 import com.js.deepsleep.data.repository.app.AppAR
 import com.js.deepsleep.data.repository.app.AppRepo
+import com.js.deepsleep.data.repository.extend.ER
+import com.js.deepsleep.data.repository.extend.ExtendRepo
 import com.js.deepsleep.ui.app.AppViewModel
+import com.js.deepsleep.ui.extend.fbase.FBaseViewModel
 import com.js.deepsleep.ui.mainactivity.MainViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.qualifier.named
@@ -20,6 +24,20 @@ var repository = module {
         )
     }
 
+    /** ExtendRepo */
+    single<ExtendRepo>(named("wakelockER")) {
+        ER(
+            AppDatabase.getInstance(BasicApp.context).extendDao(), Type.Wakelock
+        )
+    }
+
+    /** ExtendRepo */
+    single<ExtendRepo>(named("alarmER")) {
+        ER(
+            AppDatabase.getInstance(BasicApp.context).extendDao(), Type.Alarm
+        )
+    }
+
 }
 
 var viewModel = module {
@@ -32,6 +50,27 @@ var viewModel = module {
     viewModel(named("MainVm")) {
         MainViewModel()
     }
+
+    viewModel(named("ExtendVm")) { (packageName: String, type: Type) ->
+        FBaseViewModel(
+            packageName,
+            when (type) {
+                Type.Wakelock -> get(named("wakelockER"))
+                Type.Alarm -> get(named("alarmER"))
+                else -> get(named("wakelockER"))
+            }
+        )
+    }
+
+//    // WakeLockVm
+//    viewModel(named("WakeLockVm")) { (packageName: String) ->
+//        FBaseViewModel(packageName, Type.Wakelock)
+//    }
+//
+//    // AlarmVm
+//    viewModel(named("AlarmVm")) { (packageName: String) ->
+//        FBaseViewModel(packageName, Type.Alarm)
+//    }
 
     /** AppInfoRepository */
 

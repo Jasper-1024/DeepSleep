@@ -1,5 +1,6 @@
 package com.js.deepsleep.base
 
+import android.view.Menu
 import java.util.*
 
 // filter list
@@ -22,4 +23,12 @@ inline fun <T : Any> List<T>.search(query: String, text: (T) -> String): List<T>
 // sort list
 fun <T : Any> List<T>.sort(comparator: Comparator<in T>): List<T> {
     return this.sortedWith(comparator)
+}
+
+// 设置 menu 不可见
+fun menuGone(menu: Menu, set: Set<Int>) {
+    set.forEach {
+        val filterUser = menu.findItem(it)
+        filterUser.isVisible = false
+    }
 }

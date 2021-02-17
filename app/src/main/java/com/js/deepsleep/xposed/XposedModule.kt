@@ -22,9 +22,13 @@ class XposedModule : IXposedHookZygoteInit, IXposedHookLoadPackage {
         if (lpparam.packageName == BuildConfig.APPLICATION_ID) {
             SelfXp.hook(lpparam)
         } else {
-            // 获取 AppSt 设置
             try {
-                XpContext.hook { XpAppSt.getInstance().getSt(it) }
+                XpContext.hook {
+                    XpAppSt.getInstance().apply {
+                        getSt(it) // 获取 AppSt
+                        getExtends(it)// 获取 extend
+                    }
+                }
             } catch (e: Throwable) {
                 XpUtil.log("get context err $e")
             }
