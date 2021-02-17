@@ -45,6 +45,6 @@
     <fragment
         android:id="@+id/aboutFragment"
         android:name="com.js.deepsleep.ui.about.AboutFragment"
-        android:label="AboutFragment" />
+        android:label="@string/about" />
 
 </navigation>
