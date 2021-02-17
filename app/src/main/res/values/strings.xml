@@ -48,4 +48,5 @@
     <string name="SourceCode">Source Code</string>
     <string name="SourceCodeUrl">https://github.com/Jasper-1024/DeepSleep</string>
     <string name="License">License</string>
+    <string name="donate">Donate?</string>
 </resources>
