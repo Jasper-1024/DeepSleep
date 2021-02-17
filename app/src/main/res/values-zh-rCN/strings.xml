@@ -21,4 +21,13 @@
     <string name="allowList">白名单</string>
     <string name="blockList">黑名单</string>
     <string name="rE">拦截-正则表达式</string>
+
+    <string name="settings">设置</string>
+
+    <string name="theme">主题</string>
+    <string name="theme_list">全局主题</string>
+    <string name="light_theme_name">浅色</string>
+    <string name="dark_theme_name">暗色</string>
+    <string name="black_theme_name">黑色（AMOLED）</string>
+    <string name="system_theme_name">跟随系统</string>
 </resources>

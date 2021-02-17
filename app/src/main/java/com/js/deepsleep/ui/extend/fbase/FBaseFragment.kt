@@ -46,6 +46,7 @@ open class FBaseFragment : Fragment() {
         return binding.root
     }
 
+    // 关闭多余 toolbar 菜单
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         menuGone(menu, setOf(R.id.menu_filter, R.id.search))
         super.onCreateOptionsMenu(menu, inflater)

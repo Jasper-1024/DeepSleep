@@ -34,5 +34,9 @@
         android:id="@+id/FBaseFragment"
         android:name="com.js.deepsleep.ui.extend.fbase.FBaseFragment"
         android:label="FBaseFragment" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.js.deepsleep.ui.settings.SettingsFragment"
+        android:label="@string/settings" />
 
 </navigation>
