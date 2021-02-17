@@ -28,6 +28,8 @@
     <string name="black_theme_name">Black (AMOLED)</string>
     <string name="system_theme_name">Follow System</string>
 
+    <string name="about">About</string>
+
     <string name="help">Help</string>
     <string name="help_instructions"> Click the application icon to enter the app\'s global settings.
         <![CDATA[<br><br>]]> Click the application name to enter the extended settings, including whitelist/blacklist/restricted regular support.
@@ -40,4 +42,10 @@
         Issue : https://github.com/Jasper-1024/DeepSleep/issues \n
         \n
         JasperHale: ljy087621@gmail.com</string>
+    <string name="appname">AppName</string>
+    <string name="version">Version</string>
+    <string name="Support">Support</string>
+    <string name="SourceCode">Source Code</string>
+    <string name="SourceCodeUrl">https://github.com/Jasper-1024/DeepSleep</string>
+    <string name="License">License</string>
 </resources>

@@ -22,4 +22,11 @@
         android:visible="true"
         tools:ignore="ExtraText" />
 
+    <item
+        android:id="@+id/aboutFragment"
+        android:icon="@drawable/ic_about_24"
+        android:title="@string/about"
+        android:visible="true"
+        tools:ignore="ExtraText" />
+
 </menu>

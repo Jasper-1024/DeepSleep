@@ -31,10 +31,13 @@
     <string name="black_theme_name">黑色（AMOLED）</string>
     <string name="system_theme_name">跟随系统</string>
 
+    <string name="about">关于</string>
+
     <string name="help">帮助</string>
-    <string name="help_instructions">点击应用图标或左侧展开全局设置,可限制唤醒锁/闹钟/服务/同步.
+    <string name="help_instructions">点击应用图标及左侧区域展开全局设置,可限制唤醒锁/闹钟/服务/同步.
         <![CDATA[<br><br>]]>点击应用名称进入拓展设置,包括白名单/黑名单/限制正则支持.
         <![CDATA[<br><br>]]>优先级: 拓展设置{白名单 > 黑名单 > 正则} > 全局设置
+        <![CDATA[<br><br>]]>设置后重启应用生效.
         <![CDATA[<br><br>]]>严重警告,不要轻易限制系统应用,会引起无法预计的后果.
     </string>
     <string name="help_contact">联系:\n
@@ -42,5 +45,11 @@
         \n
         Issue : https://github.com/Jasper-1024/DeepSleep/issues \n
         \n
-        JasperHale: ljy087621@gmail.com</string>
+        Email : ljy087621@gmail.com</string>
+    <string name="appname">应用名称</string>
+    <string name="version">版本</string>
+    <string name="Support">支持</string>
+    <string name="SourceCode">源码</string>
+    <string name="SourceCodeUrl">https://github.com/Jasper-1024/DeepSleep</string>
+    <string name="License">许可协议</string>
 </resources>
