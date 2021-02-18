@@ -64,6 +64,8 @@ class SettingViewModel : ViewModel(), KoinComponent {
     }
 
     //存入
+    @Suppress("BlockingMethodInNonBlockingContext")
+    @Throws(IOException::class)
     private suspend fun saveFile(uri: Uri, str: String) = withContext(Dispatchers.IO) {
         BasicApp.context.contentResolver.openFileDescriptor(uri, "w")?.use { it ->
             // use{} lets the document provider know you're done by automatically closing the stream
@@ -76,6 +78,7 @@ class SettingViewModel : ViewModel(), KoinComponent {
     }
 
     // 从文件读取 json
+    @Suppress("BlockingMethodInNonBlockingContext")
     @Throws(IOException::class)
     private suspend fun getString(uri: Uri): String = withContext(Dispatchers.IO) {
         val stringBuilder = StringBuilder()

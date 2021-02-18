@@ -39,7 +39,6 @@ class AppFragment : Fragment() {
         addSubscription(mainViewModel.sort)
     }
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
