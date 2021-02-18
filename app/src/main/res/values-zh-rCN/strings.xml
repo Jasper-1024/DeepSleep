@@ -53,4 +53,5 @@
     <string name="SourceCodeUrl">https://github.com/Jasper-1024/DeepSleep</string>
     <string name="License">许可协议</string>
     <string name="donate">请我个煎饼果子 😉?</string>
+    <string name="donateErr">您未安装支付宝或启动异常..😂..</string>
 </resources>
