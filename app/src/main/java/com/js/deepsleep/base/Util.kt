@@ -1,6 +1,8 @@
 package com.js.deepsleep.base
 
 import android.view.Menu
+import androidx.preference.PreferenceManager
+import com.js.deepsleep.BasicApp
 import java.util.*
 
 // filter list
@@ -31,4 +33,12 @@ fun menuGone(menu: Menu, set: Set<Int>) {
         val filterUser = menu.findItem(it)
         filterUser.isVisible = false
     }
+}
+
+// 获取setting 状态
+
+fun getSetting(key: String): Boolean {
+    val sharedPreferences =
+        PreferenceManager.getDefaultSharedPreferences(BasicApp.context)
+    return sharedPreferences.getBoolean(key, false)
 }

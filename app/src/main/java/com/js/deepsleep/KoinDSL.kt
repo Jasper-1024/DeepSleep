@@ -12,6 +12,7 @@ import com.js.deepsleep.ui.app.AppViewModel
 import com.js.deepsleep.ui.extend.fbase.FBaseViewModel
 import com.js.deepsleep.ui.help.HelpViewModel
 import com.js.deepsleep.ui.mainactivity.MainViewModel
+import com.js.deepsleep.ui.settings.SettingViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
@@ -78,5 +79,9 @@ var viewModel = module {
 
     viewModel(named("AboutVm")) {
         AboutViewModel()
+    }
+
+    viewModel(named("SettingVm")) {
+        SettingViewModel()
     }
 }

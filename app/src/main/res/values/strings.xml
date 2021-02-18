@@ -59,4 +59,8 @@
     <string name="backup_title">Create new backup file</string>
     <string name="restore_summary">Restoring from a backup file will overwrite the current settings</string>
     <string name="restore_title">Restore from backup file</string>
+    <string name="backup">Backup complete</string>
+    <string name="restore">Restore complete</string>
+    <string name="backupErr">Backup Error</string>
+    <string name="restoreErr">Restore Error</string>
 </resources>

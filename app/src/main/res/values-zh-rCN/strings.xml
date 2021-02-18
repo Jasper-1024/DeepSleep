@@ -63,4 +63,8 @@
     <string name="backup_title">创建新的备份文件</string>
     <string name="restore_summary">从备份文件恢复,会覆盖当前设置</string>
     <string name="restore_title">从备份文件恢复</string>
+    <string name="backup">备份完成</string>
+    <string name="restore">恢复完成</string>
+    <string name="backupErr">备份遇到错误</string>
+    <string name="restoreErr">Restore Error</string>
 </resources>
