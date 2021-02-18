@@ -49,4 +49,18 @@
     <string name="SourceCodeUrl">https://github.com/Jasper-1024/DeepSleep</string>
     <string name="License">License</string>
     <string name="donate">Donate?</string>
+    <string name="donateErr">您未安装支付宝或启动异常..😂..</string>
+    <string name="other">Other</string>
+    <string name="Extend">Extend function</string>
+    <string name="experimental">Experimental function</string>
+    <string name="Extend_summary">Allow list/Block list/Regular expression support</string>
+    <string name="BackupAndRestore">Backup and restore</string>
+    <string name="backup_summary">Backup settings of installed app into file</string>
+    <string name="backup_title">Create new backup file</string>
+    <string name="restore_summary">Restoring from a backup file will overwrite the current settings</string>
+    <string name="restore_title">Restore from backup file</string>
+    <string name="backup">Backup complete</string>
+    <string name="restore">Restore complete</string>
+    <string name="backupErr">Backup Error</string>
+    <string name="restoreErr">Restore Error</string>
 </resources>

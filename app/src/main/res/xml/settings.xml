@@ -17,4 +17,34 @@
             app:useSimpleSummaryProvider="true" />
 
     </PreferenceCategory>
+
+    <PreferenceCategory
+        android:icon="@drawable/ic_settings_backup_restore_24"
+        android:title="@string/BackupAndRestore">
+
+        <Preference
+            app:key="backup"
+            app:summary="@string/backup_summary"
+            app:title="@string/backup_title" />
+
+        <Preference
+            app:key="restore"
+            app:summary="@string/restore_summary"
+            app:title="@string/restore_title" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:icon="@drawable/ic_other_24dp"
+        android:key="experimental"
+        android:title="@string/experimental">
+
+        <SwitchPreferenceCompat
+            app:defaultValue="false"
+            app:key="ExtendEnable"
+            app:summary="@string/Extend_summary"
+            app:title="@string/Extend" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

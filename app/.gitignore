@@ -1,1 +1,7 @@
 /build
+/debug/app-debug.apk
+/debug/output-metadata.json
+/release/app-release.apk
+/.idea/codeStyles/codeStyleConfig.xml
+/.idea/codeStyles/Project.xml
+/app/release/output-metadata.json

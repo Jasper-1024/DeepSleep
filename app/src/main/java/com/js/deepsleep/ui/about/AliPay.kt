@@ -3,6 +3,8 @@ package com.js.deepsleep.ui.about
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.widget.Toast
+import com.js.deepsleep.R
 import com.js.deepsleep.base.LogUtil
 import java.net.URLEncoder
 
@@ -33,6 +35,7 @@ class AliPay(private var context: Context) {
             openUri(context, url)
             return true
         } catch (e: Exception) {
+            Toast.makeText(context, context.getString(R.string.donateErr), Toast.LENGTH_LONG).show()
             LogUtil.d("Alipay", "$e")
         }
         return false

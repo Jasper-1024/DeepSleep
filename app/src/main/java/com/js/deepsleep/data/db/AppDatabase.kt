@@ -6,10 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.js.deepsleep.data.db.converter.Converters
-import com.js.deepsleep.data.db.dao.AppDao
-import com.js.deepsleep.data.db.dao.AppInfoDao
-import com.js.deepsleep.data.db.dao.AppStDao
-import com.js.deepsleep.data.db.dao.ExtendDao
+import com.js.deepsleep.data.db.dao.*
 import com.js.deepsleep.data.db.entity.AppInfo
 import com.js.deepsleep.data.db.entity.AppSt
 import com.js.deepsleep.data.db.entity.Extend
@@ -25,6 +22,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun appInfoDao(): AppInfoDao
     abstract fun appStDao(): AppStDao
     abstract fun extendDao(): ExtendDao
+    abstract fun backupDao(): BackupDao
 
     companion object {
         private const val DATABASE_NAME = "deepSleep"
