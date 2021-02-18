@@ -54,4 +54,9 @@
     <string name="Extend">Extend function</string>
     <string name="experimental">Experimental function</string>
     <string name="Extend_summary">Allow list/Block list/Regular expression support</string>
+    <string name="BackupAndRestore">Backup and restore</string>
+    <string name="backup_summary">Backup settings of installed app into file</string>
+    <string name="backup_title">Create new backup file</string>
+    <string name="restore_summary">Restoring from a backup file will overwrite the current settings</string>
+    <string name="restore_title">Restore from backup file</string>
 </resources>

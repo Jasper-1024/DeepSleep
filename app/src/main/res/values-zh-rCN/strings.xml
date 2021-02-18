@@ -58,4 +58,9 @@
     <string name="Extend">拓展功能</string>
     <string name="experimental">实验功能</string>
     <string name="Extend_summary">白名单/黑名单/正则表达式支持</string>
+    <string name="BackupAndRestore">备份与恢复</string>
+    <string name="backup_summary">备份目前所有应用设置到文件</string>
+    <string name="backup_title">创建新的备份文件</string>
+    <string name="restore_summary">从备份文件恢复,会覆盖当前设置</string>
+    <string name="restore_title">从备份文件恢复</string>
 </resources>

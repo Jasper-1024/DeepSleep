@@ -4,6 +4,7 @@ import com.js.deepsleep.base.Type
 import com.js.deepsleep.data.db.AppDatabase
 import com.js.deepsleep.data.repository.app.AppAR
 import com.js.deepsleep.data.repository.app.AppRepo
+import com.js.deepsleep.data.repository.backup.BackupRepository
 import com.js.deepsleep.data.repository.extend.ER
 import com.js.deepsleep.data.repository.extend.ExtendRepo
 import com.js.deepsleep.ui.about.AboutViewModel
@@ -34,9 +35,16 @@ var repository = module {
     }
 
     /** ExtendRepo */
-    single<ExtendRepo>(named("alarmER")) {
+    single<ExtendRepo>(named("alarmR")) {
         ER(
             AppDatabase.getInstance(BasicApp.context).extendDao(), Type.Alarm
+        )
+    }
+
+    /** BackupRepository */
+    single<BackupRepository>(named("backupR")) {
+        BackupRepository(
+            AppDatabase.getInstance(BasicApp.context).backupDao()
         )
     }
 
@@ -58,7 +66,7 @@ var viewModel = module {
             packageName,
             when (type) {
                 Type.Wakelock -> get(named("wakelockER"))
-                Type.Alarm -> get(named("alarmER"))
+                Type.Alarm -> get(named("alarmR"))
                 else -> get(named("wakelockER"))
             }
         )
