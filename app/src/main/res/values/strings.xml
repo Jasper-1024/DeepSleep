@@ -50,4 +50,8 @@
     <string name="License">License</string>
     <string name="donate">Donate?</string>
     <string name="donateErr">您未安装支付宝或启动异常..😂..</string>
+    <string name="other">Other</string>
+    <string name="Extend">Extend function</string>
+    <string name="experimental">Experimental function</string>
+    <string name="Extend_summary">Allow list/Block list/Regular expression support</string>
 </resources>

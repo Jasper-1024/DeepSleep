@@ -35,7 +35,7 @@
 
     <string name="help">帮助</string>
     <string name="help_instructions">点击应用图标及左侧区域展开全局设置,可限制唤醒锁/闹钟/服务/同步.
-        <![CDATA[<br><br>]]>点击应用名称进入拓展设置,包括白名单/黑名单/限制正则支持.
+        <![CDATA[<br><br>]]>点击应用名称进入拓展设置,包括白名单/黑名单/限制正则支持(需要开启拓展功能支持).
         <![CDATA[<br><br>]]>优先级: 拓展设置{白名单 > 黑名单 > 正则} > 全局设置
         <![CDATA[<br><br>]]>设置后重启应用生效.
         <![CDATA[<br><br>]]>严重警告,不要轻易限制系统应用,会引起无法预计的后果.
@@ -54,4 +54,8 @@
     <string name="License">许可协议</string>
     <string name="donate">请我个煎饼果子 😉?</string>
     <string name="donateErr">您未安装支付宝或启动异常..😂..</string>
+    <string name="other">Other</string>
+    <string name="Extend">拓展功能</string>
+    <string name="experimental">实验功能</string>
+    <string name="Extend_summary">白名单/黑名单/正则表达式支持</string>
 </resources>
