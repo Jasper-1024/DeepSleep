@@ -1,7 +1,10 @@
 package com.js.deepsleep.ui.app
 
 import android.view.View
+import android.widget.Toast
 import androidx.navigation.findNavController
+import com.js.deepsleep.BasicApp
+import com.js.deepsleep.R
 import com.js.deepsleep.base.getSetting
 import com.js.deepsleep.data.db.entity.AppInfo
 import com.js.deepsleep.data.db.entity.AppSt
@@ -33,12 +36,21 @@ class HandleApp(private val appViewModel: AppViewModel) : BaseItemHandle() {
         }
     }
 
-//    fun onLongClick(view: View, appInfo: AppInfo): Boolean {
-//        val direction = AppFragmentDirections.actionAppFragmentToExtendFragment(
-//            appInfo.packageName,
-//            appInfo.label
-//        )
-//        view.findNavController().navigate(direction)
-//        return true
-//    }
+    fun onLongClick(view: View, appInfo: AppInfo): Boolean {
+        // 拓展功能是否开启
+        if (getSetting("ExtendEnable")) {
+            val direction = AppFragmentDirections.actionAppFragmentToExtendFragment(
+                appInfo.packageName,
+                appInfo.label
+            )
+            view.findNavController().navigate(direction)
+        } else {
+            Toast.makeText(
+                BasicApp.context,
+                BasicApp.context.getString(R.string.extendEnable),
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+        return true
+    }
 }

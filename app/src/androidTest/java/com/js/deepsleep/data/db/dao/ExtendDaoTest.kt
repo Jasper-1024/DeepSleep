@@ -42,7 +42,7 @@ class ExtendDaoTest {
         }
 
         val tmps = runBlocking {
-            extendDao.extends()
+            extendDao.Extends()
         }
 
         Assert.assertEquals(tmps.size, 3)

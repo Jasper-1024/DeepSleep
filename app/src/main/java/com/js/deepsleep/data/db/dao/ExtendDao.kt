@@ -30,5 +30,5 @@ interface ExtendDao {
     suspend fun Extend(packageName: String, type: String): Extend
 
     @Query("select * from extend")
-    suspend fun extends(): List<Extend>
+    suspend fun Extends(): List<Extend>
 }
