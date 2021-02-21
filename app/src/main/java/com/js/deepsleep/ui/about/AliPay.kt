@@ -14,7 +14,7 @@ class AliPay(private var context: Context) {
         "https://qr.alipay.com/fkx16881wxcpvxbnwqkur21?t=1613570875134"//个人(支付宝里面我的二维码)
 
     fun jumpAlipay() {
-        openAliPay2Pay(ALIPAY_PERSON)
+        openAliPay2Pay(ALIPAY_SHOP)
     }
 
     private fun openAliPay2Pay(qrCode: String) {

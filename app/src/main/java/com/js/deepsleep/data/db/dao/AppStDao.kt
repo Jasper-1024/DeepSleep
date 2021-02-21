@@ -26,7 +26,7 @@ interface AppStDao {
 
     // for test
     @Query("select * from appSt")
-    suspend fun AppSts(): List<AppSt>
+    suspend fun appSts(): List<AppSt>
 
     @Query("select * from appSt where packageName_st = :packageName")
     suspend fun AppSt(packageName: String): AppSt
