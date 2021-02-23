@@ -12,10 +12,10 @@
     <string name="search_title">搜索</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="wakelock">唤醒锁</string>
-    <string name="alarm">闹钟</string>
+    <string name="alarm">定时器</string>
     <string name="server">服务</string>
     <string name="sync">同步</string>
-    <string name="xposeddescription">控制唤醒锁,闹钟,服务,同步等</string>
+    <string name="xposeddescription">控制唤醒锁,定时器,服务,同步等</string>
     <string name="active">模块未激活</string>
     <string name="Save">保存</string>
     <string name="allowList">白名单</string>
@@ -52,12 +52,12 @@
     <string name="SourceCode">源码</string>
     <string name="SourceCodeUrl">https://github.com/Jasper-1024/DeepSleep</string>
     <string name="License">许可协议</string>
-    <string name="donate">请我个煎饼果子 😉?</string>
+    <string name="donate">捐赠: 请我个煎饼果子?</string>
     <string name="donateErr">您未安装支付宝或启动异常..😂..</string>
-    <string name="other">Other</string>
+    <string name="other">其他</string>
     <string name="Extend">拓展功能</string>
     <string name="experimental">实验功能</string>
-    <string name="Extend_summary">白名单/黑名单/正则表达式支持</string>
+    <string name="Extend_summary">白名单/黑名单/正则表达式支持,长按应用进入.</string>
     <string name="BackupAndRestore">备份与恢复</string>
     <string name="backup_summary">备份目前所有应用设置到文件</string>
     <string name="backup_title">创建新的备份文件</string>
@@ -67,4 +67,5 @@
     <string name="restore">恢复完成</string>
     <string name="backupErr">备份遇到错误</string>
     <string name="restoreErr">Restore Error</string>
+    <string name="extendEnable">拓展功能未激活,请在设置开启.</string>
 </resources>

@@ -13,7 +13,11 @@
 
         <action
             android:id="@+id/action_appFragment_to_extendFragment"
-            app:destination="@id/extendFragment" />
+            app:destination="@id/extendFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
     </fragment>
 
     <fragment

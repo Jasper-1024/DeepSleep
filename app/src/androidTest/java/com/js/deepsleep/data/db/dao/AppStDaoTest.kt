@@ -41,7 +41,7 @@ class AppStDaoTest {
             appStDao.insert(TestData.appSts)
         }
 
-        val tmps = runBlocking { appStDao.AppSts() }
+        val tmps = runBlocking { appStDao.appSts() }
 
         Assert.assertEquals(tmps[0], TestData.appSts[0])
         Assert.assertEquals(tmps.size, 3)

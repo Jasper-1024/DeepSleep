@@ -1,3 +1,5 @@
+@file:Suppress("RemoveExplicitTypeArguments")
+
 package com.js.deepsleep
 
 import com.js.deepsleep.base.Type
