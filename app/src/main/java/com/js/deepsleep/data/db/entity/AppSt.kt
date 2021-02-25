@@ -14,5 +14,6 @@ data class AppSt(
     var wakelock: Boolean = false,
     var alarm: Boolean = false,
     var service: Boolean = false,
-    var sync: Boolean = false
+    var sync: Boolean = false,
+    var broadcast: Boolean = false
 ) : Serializable

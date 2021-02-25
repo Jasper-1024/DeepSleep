@@ -37,6 +37,7 @@ class XposedModule : IXposedHookZygoteInit, IXposedHookLoadPackage {
             AlarmXp.hook(lpparam)
             ServiceXp.hook(lpparam)
             SyncXp.hook(lpparam)
+//            BroadcastXP.hook(lpparam)
         }
     }
 }

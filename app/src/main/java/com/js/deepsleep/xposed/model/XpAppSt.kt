@@ -82,6 +82,7 @@ class XpAppSt(private val packageName: String) {
             Type.Alarm -> getBlock(mTag, alarmEx, appSt.alarm)
             Type.Service -> appSt.service
             Type.Sync -> appSt.sync
+            Type.Broadcast -> appSt.broadcast
         }
     }
 

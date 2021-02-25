@@ -20,8 +20,8 @@ android {
         applicationId "com.js.deepsleep"
         minSdkVersion 24
         targetSdkVersion 30
-        versionCode 5
-        versionName "1.0.0"
+        versionCode 6
+        versionName "1.0.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -32,6 +32,11 @@ android {
             }
         }
 
+    }
+    // room test
+    sourceSets {
+        // Adds exported schema location as test app assets.
+        androidTest.assets.srcDirs += files("$projectDir/schemas".toString())
     }
 
     buildFeatures {
@@ -128,7 +133,7 @@ dependencies {
     // optional - Kotlin Extensions and Coroutines support for Room
     implementation "androidx.room:room-ktx:$room_version"
     // optional - Test helpers
-    testImplementation "androidx.room:room-testing:$room_version"
+    androidTestImplementation  "androidx.room:room-testing:$room_version"
 
     // koin latest stable
     def koin_version = '2.2.2'

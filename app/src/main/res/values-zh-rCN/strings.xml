@@ -13,8 +13,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="wakelock">唤醒锁</string>
     <string name="alarm">定时器</string>
-    <string name="server">服务</string>
+    <string name="server">后台服务</string>
     <string name="sync">同步</string>
+    <string name="broadcast">广播</string>
     <string name="xposeddescription">控制唤醒锁,定时器,服务,同步等</string>
     <string name="active">模块未激活</string>
     <string name="Save">保存</string>
@@ -66,6 +67,6 @@
     <string name="backup">备份完成</string>
     <string name="restore">恢复完成</string>
     <string name="backupErr">备份遇到错误</string>
-    <string name="restoreErr">Restore Error</string>
+    <string name="restoreErr">恢复遇到错误</string>
     <string name="extendEnable">拓展功能未激活,请在设置开启.</string>
 </resources>

@@ -124,5 +124,19 @@
             app:layout_constraintTop_toBottomOf="@+id/switch2"
             tools:ignore="MissingConstraints,UseSwitchCompatOrMaterialXml" />
 
+        <Switch
+            android:id="@+id/switch5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:checked="@={!item.data.st.broadcast}"
+            android:onClick="@{() -> item.handle.save(item.data.st)}"
+            android:text="@string/broadcast"
+            android:textSize="16sp"
+            android:visibility="@{View.GONE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/switch4"
+            app:layout_constraintTop_toBottomOf="@+id/switch4"
+            tools:ignore="MissingConstraints,UseSwitchCompatOrMaterialXml" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
