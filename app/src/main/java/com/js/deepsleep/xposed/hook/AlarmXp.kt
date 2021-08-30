@@ -72,16 +72,14 @@ class AlarmXp {
             val xpAppSt = XpAppSt.getInstance()
 
             val alarmName: String = param.args[7] as String?
-                ?: {
-                    (XposedHelpers.getAdditionalStaticField(
-                        pendingIntent,
-                        "alarmName"
-                    ) as String?).apply {
-                        if (this != null) {
-                            XposedHelpers.setAdditionalStaticField(pendingIntent, "alarmName", null)
-                        }
+                ?: (XposedHelpers.getAdditionalStaticField(
+                    pendingIntent,
+                    "alarmName"
+                ) as String?).apply {
+                    if (this != null) {
+                        XposedHelpers.setAdditionalStaticField(pendingIntent, "alarmName", null)
                     }
-                }.invoke()
+                }
                 ?: "null"
 
             if (major(alarmName) || xpAppSt.block(Type.Alarm, XpUtil.packageName, alarmName)) {

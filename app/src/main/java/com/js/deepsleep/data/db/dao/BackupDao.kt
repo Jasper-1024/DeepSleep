@@ -19,5 +19,5 @@ interface BackupDao {
     suspend fun restoreAppSts(appSts: List<AppSt>)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun restoreExtends(extends: List<Extend>)
+    suspend fun restoreExtends(extends1: List<Extend>)
 }

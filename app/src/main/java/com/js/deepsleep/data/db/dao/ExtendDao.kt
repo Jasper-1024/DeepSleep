@@ -17,13 +17,13 @@ interface ExtendDao {
     suspend fun insert(extend: Extend)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(extends: List<Extend>)
+    suspend fun insert(extends1: List<Extend>)
 
     @Delete
     suspend fun delete(extend: Extend)
 
     @Delete
-    suspend fun delete(extends: List<Extend>)
+    suspend fun delete(extends1: List<Extend>)
 
     // for test
     @Query("select * from extend where packageName_ex = :packageName and type = :type")
