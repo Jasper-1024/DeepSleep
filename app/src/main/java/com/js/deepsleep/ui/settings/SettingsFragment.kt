@@ -22,13 +22,17 @@ class SettingsFragment : PreferenceFragmentCompat() {
     // 备份
     private val backupRAFR =
         registerForActivityResult(ActivityResultContracts.CreateDocument()) { uri ->
-            viewModel.backup(uri)
+            if (uri != null) {
+                viewModel.backup(uri)
+            }
         }
 
     // 恢复
     private val restoreRAFR =
         registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
-            viewModel.restore(uri)
+            if (uri != null) {
+                viewModel.restore(uri)
+            }
         }
 
     override fun onCreate(savedInstanceState: Bundle?) {
