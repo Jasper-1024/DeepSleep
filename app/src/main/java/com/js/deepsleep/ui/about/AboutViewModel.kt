@@ -6,7 +6,7 @@ import com.js.deepsleep.BasicApp
 class AboutViewModel : ViewModel() {
     var about = About()
 
-    fun aliPay() {
-        AliPay(BasicApp.context).jumpAlipay()
-    }
+//    fun aliPay() {
+//        AliPay(BasicApp.context).jumpAlipay()
+//    }
 }
