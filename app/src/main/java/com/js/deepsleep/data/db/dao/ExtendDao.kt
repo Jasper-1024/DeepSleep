@@ -1,14 +1,17 @@
 package com.js.deepsleep.data.db.dao
 
 import androidx.room.*
+import com.js.deepsleep.data.db.entity.AppSt
 import com.js.deepsleep.data.db.entity.Extend
 import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface ExtendDao {
 
-//    @Query("select * from extend where type = :type")
-//    fun loadExtends(type: String): Flow<Extend>
+    //    @Query("select * from extend where type = :type")
+    //    fun loadExtends(type: String): Flow<Extend>
+    @Query("select * from extend")
+    fun loadExtends(): Flow<List<Extend>>
 
     @Query("select * from extend where packageName_ex = :packageName and type = :type")
     fun loadExtend(packageName: String, type: String): Flow<Extend?>
