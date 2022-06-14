@@ -1,7 +1,6 @@
 package com.js.deepsleep.data.db.dao
 
 import androidx.room.*
-import com.js.deepsleep.data.db.entity.AppSt
 import com.js.deepsleep.data.db.entity.Extend
 import kotlinx.coroutines.flow.Flow
 

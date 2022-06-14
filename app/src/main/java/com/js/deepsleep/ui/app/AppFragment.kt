@@ -26,6 +26,7 @@ class AppFragment : Fragment() {
     private lateinit var binding: FragmentAppBinding
 
     private val viewModel: AppViewModel by viewModel(named("AppVm"))
+    private val syncStViewModel: SyncStViewModel by viewModel(named("SyncStVm"))
 
     private val mainViewModel: MainViewModel by sharedViewModel(named("MainVm"))
 
@@ -35,6 +36,8 @@ class AppFragment : Fragment() {
         addSubscription(mainViewModel.type)
         addSubscription(mainViewModel.query)
         addSubscription(mainViewModel.sort)
+
+        syncStViewModel.syncSp()
     }
 
     override fun onCreateView(
