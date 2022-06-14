@@ -9,9 +9,7 @@ import com.js.deepsleep.base.getSetting
 import com.js.deepsleep.data.db.entity.AppInfo
 import com.js.deepsleep.data.db.entity.AppSt
 import com.js.deepsleep.ui.databinding.item.BaseItemHandle
-import org.koin.core.component.KoinApiExtension
 
-@KoinApiExtension
 class HandleApp(private val appViewModel: AppViewModel) : BaseItemHandle() {
     // 保存 Appst
     fun save(appSt: AppSt) {

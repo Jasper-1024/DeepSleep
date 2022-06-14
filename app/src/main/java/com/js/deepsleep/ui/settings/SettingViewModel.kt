@@ -14,13 +14,11 @@ import com.js.deepsleep.data.repository.backup.BackupRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import org.koin.core.component.KoinApiExtension
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 import org.koin.core.qualifier.named
 import java.io.*
 
-@KoinApiExtension
 class SettingViewModel : ViewModel(), KoinComponent {
     private val backupR: BackupRepository by inject(named("backupR"))
 

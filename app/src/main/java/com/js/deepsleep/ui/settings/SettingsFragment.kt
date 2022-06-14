@@ -10,11 +10,9 @@ import androidx.preference.PreferenceFragmentCompat
 import com.js.deepsleep.R
 import com.js.deepsleep.base.menuGone
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import org.koin.core.component.KoinApiExtension
 import org.koin.core.qualifier.named
 import java.util.*
 
-@KoinApiExtension
 class SettingsFragment : PreferenceFragmentCompat() {
 
     private val viewModel: SettingViewModel by viewModel(named("SettingVm"))

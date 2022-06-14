@@ -5,9 +5,7 @@ import androidx.databinding.ObservableBoolean
 import com.js.deepsleep.data.db.entity.App
 import com.js.deepsleep.data.db.entity.AppSt
 import com.js.deepsleep.ui.databinding.item.BaseItem
-import org.koin.core.component.KoinApiExtension
 
-@KoinApiExtension
 class ItemApp(
     override var data: App,
     override val handle: HandleApp,

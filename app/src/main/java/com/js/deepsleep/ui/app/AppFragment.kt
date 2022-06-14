@@ -18,11 +18,9 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import org.koin.core.component.KoinApiExtension
 import org.koin.core.qualifier.named
 
 
-@KoinApiExtension
 class AppFragment : Fragment() {
 
     private lateinit var binding: FragmentAppBinding

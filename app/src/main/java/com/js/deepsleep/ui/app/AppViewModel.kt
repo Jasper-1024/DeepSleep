@@ -11,7 +11,6 @@ import com.js.deepsleep.data.db.entity.AppSt
 import com.js.deepsleep.data.repository.app.AppRepo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import org.koin.core.component.KoinApiExtension
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 import org.koin.core.qualifier.named
@@ -20,7 +19,6 @@ import java.util.*
 import kotlin.Comparator
 import kotlin.collections.set
 
-@KoinApiExtension
 class AppViewModel : ViewModel(), KoinComponent {
 
     private val appAR: AppRepo by inject(named("AppR"))
