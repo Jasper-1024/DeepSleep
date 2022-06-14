@@ -9,8 +9,11 @@ import com.js.deepsleep.data.repository.app.AppRepo
 import com.js.deepsleep.data.repository.backup.BackupRepository
 import com.js.deepsleep.data.repository.extend.ER
 import com.js.deepsleep.data.repository.extend.ExtendRepo
+import com.js.deepsleep.data.repository.syncsp.SyncSp
+import com.js.deepsleep.data.repository.syncsp.SyncSpRepo
 import com.js.deepsleep.ui.about.AboutViewModel
 import com.js.deepsleep.ui.app.AppViewModel
+import com.js.deepsleep.ui.app.SyncStViewModel
 import com.js.deepsleep.ui.extend.fbase.FBaseViewModel
 import com.js.deepsleep.ui.help.HelpViewModel
 import com.js.deepsleep.ui.mainactivity.MainViewModel
@@ -51,12 +54,24 @@ var repository = module {
         )
     }
 
+    /** SyncSpRepo */
+    single<SyncSpRepo>(named("syncSpR")) {
+        SyncSp(
+            AppDatabase.getInstance(BasicApp.context).appStDao(),
+            AppDatabase.getInstance(BasicApp.context).extendDao()
+        )
+    }
+
 }
 
 var viewModel = module {
 
     viewModel(named("AppVm")) {
         AppViewModel()
+    }
+
+    viewModel(named("SyncStVm")) {
+        SyncStViewModel()
     }
 
     // MainViewModel
