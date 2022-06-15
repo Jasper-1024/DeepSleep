@@ -24,10 +24,14 @@ open class FBaseFragment : Fragment() {
         parametersOf(packageName, type)
     }
 
+    private val syncExViewModel: SyncExViewModel by viewModel(named("SyncExVm"))
+
     override fun onCreate(savedInstanceState: Bundle?) {
         // 获取 packageName
         packageName = arguments?.getString("packageName") ?: ""
         super.onCreate(savedInstanceState)
+
+        syncExViewModel.syncEx()
     }
 
     override fun onCreateView(

@@ -15,6 +15,7 @@ import com.js.deepsleep.ui.about.AboutViewModel
 import com.js.deepsleep.ui.app.AppViewModel
 import com.js.deepsleep.ui.app.SyncStViewModel
 import com.js.deepsleep.ui.extend.fbase.FBaseViewModel
+import com.js.deepsleep.ui.extend.fbase.SyncExViewModel
 import com.js.deepsleep.ui.help.HelpViewModel
 import com.js.deepsleep.ui.mainactivity.MainViewModel
 import com.js.deepsleep.ui.settings.SettingViewModel
@@ -74,6 +75,9 @@ var viewModel = module {
         SyncStViewModel()
     }
 
+    viewModel(named("SyncExVm")) {
+        SyncExViewModel()
+    }
     // MainViewModel
     viewModel(named("MainVm")) {
         MainViewModel()
