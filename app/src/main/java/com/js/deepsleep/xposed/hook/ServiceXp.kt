@@ -2,8 +2,8 @@ package com.js.deepsleep.xposed.hook
 
 import android.content.ComponentName
 import com.js.deepsleep.base.Type
+import com.js.deepsleep.xposed.XpNSP
 import com.js.deepsleep.xposed.XpUtil
-import com.js.deepsleep.xposed.model.XpAppSt
 import de.robv.android.xposed.XC_MethodHook
 import de.robv.android.xposed.XposedBridge
 import de.robv.android.xposed.callbacks.XC_LoadPackage
@@ -43,7 +43,7 @@ class ServiceXp {
 
             val componentName = param.result as ComponentName?
             componentName?.let {
-                if (XpAppSt.getInstance().block(Type.Service, it.packageName, it.className)) {
+                if (XpNSP.getInstance().block(Type.Service, it.packageName, it.className)) {
                     param.result = null
                     XpUtil.log("service block ${it.className}")
                 }

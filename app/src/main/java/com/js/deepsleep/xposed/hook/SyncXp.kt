@@ -1,8 +1,8 @@
 package com.js.deepsleep.xposed.hook
 
 import com.js.deepsleep.base.Type
+import com.js.deepsleep.xposed.XpNSP
 import com.js.deepsleep.xposed.XpUtil
-import com.js.deepsleep.xposed.model.XpAppSt
 import de.robv.android.xposed.XC_MethodHook
 import de.robv.android.xposed.XposedBridge
 import de.robv.android.xposed.callbacks.XC_LoadPackage
@@ -25,7 +25,7 @@ class SyncXp {
         @Throws(Throwable::class)
         override fun beforeHookedMethod(param: MethodHookParam) {
 //            XpUtil.log("sync hook")
-            if (XpAppSt.getInstance().block(Type.Sync, "", "")) {
+            if (XpNSP.getInstance().block(Type.Sync, "", "")) {
                 param.result = null
                 XpUtil.log("sync block")
             }

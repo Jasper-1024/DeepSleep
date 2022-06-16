@@ -2,8 +2,8 @@ package com.js.deepsleep.xposed.hook
 
 import android.os.PowerManager
 import com.js.deepsleep.base.Type
+import com.js.deepsleep.xposed.XpNSP
 import com.js.deepsleep.xposed.XpUtil
-import com.js.deepsleep.xposed.model.XpAppSt
 import de.robv.android.xposed.XC_MethodHook
 import de.robv.android.xposed.XposedHelpers
 import de.robv.android.xposed.callbacks.XC_LoadPackage
@@ -44,14 +44,14 @@ class WakelockXp {
 
             if (param.thisObject !is PowerManager.WakeLock) return
 
-            val xpAppSt = XpAppSt.getInstance()
+            val xpNSP = XpNSP.getInstance()
 
             val mPackageName = getString(param, "mPackageName")
             val mTag = getString(param, "mTag")
 
 
             //非关键应用               和 设置禁止
-            if (!major(mPackageName) && xpAppSt.block(Type.Wakelock, mPackageName, mTag)) {
+            if (!major(mPackageName) && xpNSP.block(Type.Wakelock, mPackageName, mTag)) {
                 param.result = null
                 XpUtil.log("wakelock block $mTag")
             }

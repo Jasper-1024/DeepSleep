@@ -6,8 +6,8 @@ import android.content.Intent
 import android.os.Handler
 import android.os.WorkSource
 import com.js.deepsleep.base.Type
+import com.js.deepsleep.xposed.XpNSP
 import com.js.deepsleep.xposed.XpUtil
-import com.js.deepsleep.xposed.model.XpAppSt
 import de.robv.android.xposed.XC_MethodHook
 import de.robv.android.xposed.XposedBridge
 import de.robv.android.xposed.XposedHelpers
@@ -69,7 +69,7 @@ class AlarmXp {
     class HandleAlarm : XC_MethodHook() {
         @Throws(Throwable::class)
         override fun beforeHookedMethod(param: MethodHookParam) {
-            val xpAppSt = XpAppSt.getInstance()
+            val xpNSP = XpNSP.getInstance()
 
             val alarmName: String = param.args[7] as String?
                 ?: (XposedHelpers.getAdditionalStaticField(
@@ -82,7 +82,7 @@ class AlarmXp {
                 }
                 ?: "null"
 
-            if (major(alarmName) || xpAppSt.block(Type.Alarm, XpUtil.packageName, alarmName)) {
+            if (major(alarmName) || xpNSP.block(Type.Alarm, XpUtil.packageName, alarmName)) {
                 param.result = null
                 XpUtil.log("alarm block $alarmName")
             }

@@ -3,11 +3,12 @@ package com.js.deepsleep.base
 import android.annotation.SuppressLint
 import android.content.Context
 import com.js.deepsleep.BasicApp
+import com.js.deepsleep.BuildConfig
 
 
 class SPTools {
     companion object {
-        const val SP_NAME = "com.js.deepsleep"
+        const val SP_NAME = "DeepSleep"
 
         private const val default_str = ""
         private const val default_bool = true
