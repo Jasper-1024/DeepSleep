@@ -20,8 +20,8 @@ android {
         applicationId "com.js.deepsleep"
         minSdkVersion 24
         targetSdkVersion 32
-        versionCode 8
-        versionName "1.2.1"
+        versionCode 9
+        versionName "1.2.0-rc1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -154,6 +154,8 @@ dependencies {
     implementation "io.insert-koin:koin-androidx-navigation:$koin_version"
     // Jetpack Compose
     implementation "io.insert-koin:koin-androidx-compose:$koin_version"
+
+    implementation 'androidx.work:work-runtime-ktx:2.7.1'
 
 //    // koin latest stable
 //    def koin_version = '2.2.2'
