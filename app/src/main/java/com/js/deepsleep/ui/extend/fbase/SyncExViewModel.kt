@@ -27,6 +27,9 @@ class SyncExViewModel : ViewModel(), KoinComponent {
     }
 
     private fun saveEx2SP(ex: Extend) {
+
+//        LogUtil.d("SyncSt", "getSyncSp: ${ex}")
+
         if (ex.allowList.isNotEmpty()) {
             SPTools.setString(
                 "${ex.packageName}_${ex.type}_allowList",
@@ -43,7 +46,7 @@ class SyncExViewModel : ViewModel(), KoinComponent {
 
         if (ex.rE.isNotEmpty()) {
             SPTools.setString(
-                "${ex.packageName}_${ex.type}_re",
+                "${ex.packageName}_${ex.type}_rE",
                 BasicApp.gson.toJson(ex.rE)
             )
         }
