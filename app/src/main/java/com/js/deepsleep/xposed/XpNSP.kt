@@ -48,7 +48,7 @@ class XpNSP(private val packageName: String) {
             appSt.service = getService()
             appSt.broadcast = getBroadcast()
 
-            XpUtil.log("getSt $appSt")
+//            XpUtil.log("getSt $appSt")
 
         } catch (e: Exception) {
             XpUtil.log("getSt err: $e")
@@ -62,14 +62,14 @@ class XpNSP(private val packageName: String) {
                 it.blockList = getAppSet(Type.Wakelock, "blockList")
                 it.rE = getAppSet(Type.Wakelock, "rE")
 
-                XpUtil.log("getExtends wakelockEx $wakelockEx")
+//                XpUtil.log("getExtends wakelockEx $wakelockEx")
             }
             alarmEx.let {
                 it.allowList = getAppSet(Type.Alarm, "allowList")
                 it.blockList = getAppSet(Type.Alarm, "blockList")
                 it.rE = getAppSet(Type.Alarm, "rE")
 
-                XpUtil.log("getExtends alarmEx $alarmEx")
+//                XpUtil.log("getExtends alarmEx $alarmEx")
             }
         } catch (e: Exception) {
             XpUtil.log("getExtends err: $e")
