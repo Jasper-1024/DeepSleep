@@ -2,7 +2,9 @@
 
 * This is English version(although a lot of google translation😂), for china user [中文版](https://github.com/Jasper-1024/DeepSleep/blob/dev/README/README_zh_cn.md)
 
-* The Xposed module that controls application wake-up, runs on Android N ~ R versions.
+* The Xposed module that controls application wake-up, runs on Android N ~ versions.
+* Restrict app wakelock/alarm/service/sync.
+* The scope selects the application to be restricted.
 * Does not include the recording function, which is a simplified version of Nowakelock.
 
 ## About
@@ -12,15 +14,19 @@
 ## Features
 
 * Beta:
+  * ~~wakelock/alarm/service/sync restriction~~
   * ~~Data backup and recovery~~
   * ~~help/about fragment~~
+  * ~~black/white list/regex support~~
+  * ~~dark/light theme switch~~
+  * broadcast restriction
 
 * Release:
-  * Application statistics
+  * 
 
 ## Compatibility
 
-* Android N ~ R
+* Android N ~ 
 * Edxpoed LSPosed
 
 ## Compile
@@ -31,9 +37,9 @@
 
 ## Installation
 
-* [Github releases](https://github.com/Jasper-1024/DeepSleep/releases), alpha/bate/Released 版.
-* [酷安](https://www.coolapk.com/apk/260112), bate/Released 版
-* ~~[Play].~~
+* [Github releases](https://github.com/Jasper-1024/DeepSleep/releases), alpha/bate/Released.
+* [酷安](https://www.coolapk.com/apk/260112), bate/Released
+* [Play] waiting
 
 ## Support
 
