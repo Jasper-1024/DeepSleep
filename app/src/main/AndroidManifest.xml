@@ -16,12 +16,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <provider
-            android:name=".data.provider.DSContentProvider"
-            android:authorities="com.js.deepsleep"
-            android:enabled="true"
-            android:exported="true"
-            tools:ignore="ExportedContentProvider" />
+<!--        <provider-->
+<!--            android:name=".data.provider.DSContentProvider"-->
+<!--            android:authorities="com.js.deepsleep"-->
+<!--            android:enabled="true"-->
+<!--            android:exported="true"-->
+<!--            tools:ignore="ExportedContentProvider" />-->
 
 
         <meta-data
