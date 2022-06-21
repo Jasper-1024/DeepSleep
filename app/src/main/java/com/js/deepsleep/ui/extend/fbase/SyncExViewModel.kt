@@ -30,25 +30,26 @@ class SyncExViewModel : ViewModel(), KoinComponent {
 
 //        LogUtil.d("SyncSt", "getSyncSp: ${ex}")
 
-        if (ex.allowList.isNotEmpty()) {
-            SPTools.setString(
-                "${ex.packageName}_${ex.type}_allowList",
-                BasicApp.gson.toJson(ex.allowList)
-            )
-        }
+//        if (ex.allowList.isNotEmpty()) {
+        SPTools.setString(
+            "${ex.packageName}_${ex.type}_allowList",
+            BasicApp.gson.toJson(ex.allowList)
+        )
+//        }
 
-        if (ex.blockList.isNotEmpty()) {
-            SPTools.setString(
-                "${ex.packageName}_${ex.type}_blockList",
-                BasicApp.gson.toJson(ex.blockList)
-            )
-        }
+//        if (ex.blockList.isNotEmpty()) {
+        SPTools.setString(
+            "${ex.packageName}_${ex.type}_blockList",
+            BasicApp.gson.toJson(ex.blockList)
+        )
+//        }
 
-        if (ex.rE.isNotEmpty()) {
-            SPTools.setString(
-                "${ex.packageName}_${ex.type}_rE",
-                BasicApp.gson.toJson(ex.rE)
-            )
-        }
+//        if (ex.rE.isNotEmpty()) {
+//            LogUtil.d("SyncSt", "getSyncSp: ${ex}")
+        SPTools.setString(
+            "${ex.packageName}_${ex.type}_rE",
+            BasicApp.gson.toJson(ex.rE)
+        )
+//        }
     }
 }
