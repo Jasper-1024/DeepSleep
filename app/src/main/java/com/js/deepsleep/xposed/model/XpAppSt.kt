@@ -2,7 +2,7 @@ package com.js.deepsleep.xposed.model
 
 import android.content.Context
 import android.os.Bundle
-import com.js.deepsleep.base.Type
+import com.js.deepsleep.tools.Type
 import com.js.deepsleep.data.db.entity.AppSt
 import com.js.deepsleep.data.db.entity.Extend
 import com.js.deepsleep.data.provider.PParameters

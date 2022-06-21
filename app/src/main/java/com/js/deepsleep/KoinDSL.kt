@@ -2,7 +2,7 @@
 
 package com.js.deepsleep
 
-import com.js.deepsleep.base.Type
+import com.js.deepsleep.tools.Type
 import com.js.deepsleep.data.db.AppDatabase
 import com.js.deepsleep.data.repository.app.AppAR
 import com.js.deepsleep.data.repository.app.AppRepo

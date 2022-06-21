@@ -3,10 +3,9 @@ package com.js.deepsleep.xposed
 import android.content.SharedPreferences
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.js.deepsleep.BasicApp
 import com.js.deepsleep.BuildConfig
-import com.js.deepsleep.base.SPTools
-import com.js.deepsleep.base.Type
+import com.js.deepsleep.tools.SPTools
+import com.js.deepsleep.tools.Type
 import com.js.deepsleep.data.db.entity.AppSt
 import com.js.deepsleep.data.db.entity.Extend
 import de.robv.android.xposed.XSharedPreferences

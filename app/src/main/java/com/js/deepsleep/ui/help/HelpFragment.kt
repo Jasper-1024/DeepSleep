@@ -5,7 +5,7 @@ import android.text.method.LinkMovementMethod
 import android.view.*
 import androidx.fragment.app.Fragment
 import com.js.deepsleep.R
-import com.js.deepsleep.base.menuGone
+import com.js.deepsleep.tools.menuGone
 import com.js.deepsleep.databinding.FragmentHelpBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.qualifier.named

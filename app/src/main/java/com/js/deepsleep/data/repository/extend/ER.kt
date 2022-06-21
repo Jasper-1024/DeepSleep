@@ -1,6 +1,6 @@
 package com.js.deepsleep.data.repository.extend
 
-import com.js.deepsleep.base.Type
+import com.js.deepsleep.tools.Type
 import com.js.deepsleep.data.db.dao.ExtendDao
 import com.js.deepsleep.data.db.entity.Extend
 import kotlinx.coroutines.flow.Flow

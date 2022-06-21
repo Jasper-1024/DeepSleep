@@ -5,7 +5,7 @@ import android.util.AttributeSet
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Recycler
-import com.js.deepsleep.base.LogUtil
+import com.js.deepsleep.tools.LogUtil
 
 class MyLayoutManager : LinearLayoutManager {
     constructor(context: Context?) : super(context)

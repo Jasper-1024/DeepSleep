@@ -1,9 +1,8 @@
-package com.js.deepsleep.base
+package com.js.deepsleep.tools
 
 import android.annotation.SuppressLint
 import android.content.Context
 import com.js.deepsleep.BasicApp
-import com.js.deepsleep.BuildConfig
 
 
 class SPTools {

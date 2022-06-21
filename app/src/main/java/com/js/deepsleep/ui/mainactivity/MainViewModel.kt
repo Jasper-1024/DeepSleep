@@ -2,8 +2,8 @@ package com.js.deepsleep.ui.mainactivity
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.js.deepsleep.base.AppType
-import com.js.deepsleep.base.Sort
+import com.js.deepsleep.tools.AppType
+import com.js.deepsleep.tools.Sort
 
 class MainViewModel : ViewModel() {
     // App 类型

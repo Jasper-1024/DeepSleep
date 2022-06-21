@@ -3,8 +3,8 @@ package com.js.deepsleep.data.provider
 import android.content.Context
 import android.os.Bundle
 import androidx.annotation.VisibleForTesting
-import com.js.deepsleep.base.LogUtil
-import com.js.deepsleep.base.Type
+import com.js.deepsleep.tools.LogUtil
+import com.js.deepsleep.tools.Type
 import com.js.deepsleep.data.db.AppDatabase
 import com.js.deepsleep.data.db.entity.Extend
 import kotlinx.coroutines.runBlocking

@@ -13,7 +13,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
 import com.js.deepsleep.R
-import com.js.deepsleep.base.AppType
+import com.js.deepsleep.tools.AppType
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.qualifier.named
 

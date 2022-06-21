@@ -1,6 +1,6 @@
 package com.js.deepsleep.ui.databinding.item
 
-import com.js.deepsleep.base.LogUtil
+import com.js.deepsleep.tools.LogUtil
 
 open class BaseItemHandle {
     fun onClick() {

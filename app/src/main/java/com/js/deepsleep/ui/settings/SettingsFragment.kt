@@ -8,7 +8,7 @@ import androidx.preference.ListPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import com.js.deepsleep.R
-import com.js.deepsleep.base.menuGone
+import com.js.deepsleep.tools.menuGone
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.qualifier.named
 import java.util.*

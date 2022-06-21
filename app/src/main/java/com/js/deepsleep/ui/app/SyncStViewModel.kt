@@ -2,9 +2,8 @@ package com.js.deepsleep.ui.app
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.js.deepsleep.base.LogUtil
-import com.js.deepsleep.base.SPTools
-import com.js.deepsleep.base.Type
+import com.js.deepsleep.tools.SPTools
+import com.js.deepsleep.tools.Type
 import com.js.deepsleep.data.db.entity.AppSt
 import com.js.deepsleep.data.repository.syncsp.SyncSpRepo
 import kotlinx.coroutines.launch

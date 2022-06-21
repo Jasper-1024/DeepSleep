@@ -3,8 +3,7 @@ package com.js.deepsleep.ui.extend.fbase
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.js.deepsleep.BasicApp
-import com.js.deepsleep.base.LogUtil
-import com.js.deepsleep.base.SPTools
+import com.js.deepsleep.tools.SPTools
 import com.js.deepsleep.data.db.entity.Extend
 import com.js.deepsleep.data.repository.syncsp.SyncSpRepo
 import kotlinx.coroutines.launch

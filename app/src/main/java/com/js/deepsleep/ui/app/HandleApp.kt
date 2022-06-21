@@ -5,7 +5,7 @@ import android.widget.Toast
 import androidx.navigation.findNavController
 import com.js.deepsleep.BasicApp
 import com.js.deepsleep.R
-import com.js.deepsleep.base.getSetting
+import com.js.deepsleep.tools.getSetting
 import com.js.deepsleep.data.db.entity.AppInfo
 import com.js.deepsleep.data.db.entity.AppSt
 import com.js.deepsleep.ui.databinding.item.BaseItemHandle

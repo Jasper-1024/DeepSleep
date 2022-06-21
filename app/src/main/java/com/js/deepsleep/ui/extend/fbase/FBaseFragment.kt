@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import com.js.deepsleep.R
-import com.js.deepsleep.base.Type
-import com.js.deepsleep.base.menuGone
+import com.js.deepsleep.tools.Type
+import com.js.deepsleep.tools.menuGone
 import com.js.deepsleep.databinding.FragmentFbaseBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf

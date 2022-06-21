@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.js.deepsleep.R
-import com.js.deepsleep.base.*
+import com.js.deepsleep.tools.*
 import com.js.deepsleep.data.db.entity.App
 import com.js.deepsleep.data.db.entity.AppSt
 import com.js.deepsleep.data.repository.app.AppRepo

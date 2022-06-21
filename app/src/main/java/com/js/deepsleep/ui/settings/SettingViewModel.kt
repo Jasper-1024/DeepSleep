@@ -7,8 +7,8 @@ import androidx.lifecycle.viewModelScope
 import com.google.gson.reflect.TypeToken
 import com.js.deepsleep.BasicApp
 import com.js.deepsleep.R
-import com.js.deepsleep.base.LogUtil
-import com.js.deepsleep.base.getSetting
+import com.js.deepsleep.tools.LogUtil
+import com.js.deepsleep.tools.getSetting
 import com.js.deepsleep.data.repository.backup.AppBackup
 import com.js.deepsleep.data.repository.backup.BackupRepository
 import kotlinx.coroutines.Dispatchers
