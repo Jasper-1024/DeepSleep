@@ -36,6 +36,9 @@
         <meta-data
             android:name="xposedsharedprefs"
             android:value="true" />
+        <meta-data
+            android:name="xposedscope"
+            android:resource="@array/scopes" />
 
         <activity android:name=".ui.mainactivity.MainActivity"
             android:exported="true">
