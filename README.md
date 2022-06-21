@@ -49,7 +49,7 @@
 
 - [Github releases](https://github.com/Jasper-1024/DeepSleep/releases), alpha/bate/Released.
 - [酷安](https://www.coolapk.com/apk/260112), bate/Released
-- [Play] waiting
+- [Play](https://play.google.com/store/apps/details?id=com.js.deepsleep) bate/Released
 
 ## Support
 
