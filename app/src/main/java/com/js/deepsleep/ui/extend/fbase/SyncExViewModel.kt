@@ -6,6 +6,7 @@ import com.js.deepsleep.BasicApp
 import com.js.deepsleep.tools.SPTools
 import com.js.deepsleep.data.db.entity.Extend
 import com.js.deepsleep.data.repository.syncsp.SyncSpRepo
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
@@ -15,7 +16,7 @@ class SyncExViewModel : ViewModel(), KoinComponent {
     private val syncSPR: SyncSpRepo by inject(named("syncSpR"))
 
     fun syncEx() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             syncSPR.getAllAppStEx().collect { exs ->
                 exs.map {
                     saveEx2SP(it)
