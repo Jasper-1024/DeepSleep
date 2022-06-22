@@ -48,6 +48,10 @@ class AppAR(
         deleteAll(dbAppInfos.keys subtract sysAppInfos.keys, dbAppInfos)
     }
 
+    override suspend fun getAppInfo(packageName: String): AppInfo {
+        return appInfoDao.loadAppInfo(packageName)
+    }
+
     /**db 插入新应用*/
     private suspend fun insertAll(
         packageNames: Set<String>,
