@@ -20,8 +20,8 @@ android {
         applicationId "com.js.deepsleep"
         minSdkVersion 24
         targetSdkVersion 32
-        versionCode 11
-        versionName "1.2.1-rc0"
+        versionCode 12
+        versionName "1.2.1-rc2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
