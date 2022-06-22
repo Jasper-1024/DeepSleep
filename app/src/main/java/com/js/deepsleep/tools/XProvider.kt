@@ -11,6 +11,7 @@ import android.provider.Settings
 import java.lang.reflect.Method
 
 private const val TAG = "XProvider"
+private const val PER_USER_RANGE = 100000
 
 class XProvider {
     companion object {
@@ -21,6 +22,7 @@ class XProvider {
             } else null
 
         }
+
         // handle method call
         private fun handle(context: Context, method: String, extras: Bundle): Bundle {
             return when (method) {
@@ -48,16 +50,16 @@ private fun getUserId(uid: Int): Int {
             UserHandle::class.java.getDeclaredMethod("getUserId", Int::class.javaPrimitiveType)
         method.invoke(null, uid) as Int
     } catch (ex: Throwable) {
-        return uid
+        return uid / PER_USER_RANGE
     }
 }
 
 private fun xForceStop(context: Context, extras: Bundle): Bundle {
     val packageName = extras.getString("packageName")
-    val userId = extras.getInt("userId")
-    val uid = getUserId(userId)
+    val uid = extras.getInt("uid")
+    val userid = getUserId(uid)
 
-    forceStop(context, packageName!!, uid)
+    forceStop(context, packageName!!, userid)
     return Bundle()
 }
 
