@@ -49,8 +49,13 @@ class AppViewModel : ViewModel(), KoinComponent {
             appAR.setAppSt(appSt)
         }
     }
+
     // call system force stop app
     fun stopApp(appInfo: AppInfo) {
+
+        if (appInfo.persistent || appInfo.system) {// if app is system or persistent
+            return
+        }
         viewModelScope.launch(Dispatchers.Default) {
 
             val args = Bundle()
