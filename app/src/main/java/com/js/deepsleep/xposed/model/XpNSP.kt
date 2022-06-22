@@ -131,7 +131,7 @@ class XpNSP(private val packageName: String) {
     }
 
     private fun getSet(key: String): Set<String> {
-        var str: String? = pref?.getString(key, "")
+        val str: String? = pref?.getString(key, "")
         return if (str.isNullOrBlank()) {
             mutableSetOf()
         } else {

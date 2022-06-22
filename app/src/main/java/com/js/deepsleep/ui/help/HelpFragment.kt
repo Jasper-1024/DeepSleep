@@ -34,6 +34,7 @@ class HelpFragment : Fragment() {
     }
 
     // 关闭多余 toolbar 菜单
+    @Deprecated("Deprecated in Java")
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         menuGone(menu, setOf(R.id.menu_filter, R.id.search))
         super.onCreateOptionsMenu(menu, inflater)
