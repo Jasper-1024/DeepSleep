@@ -1,7 +1,7 @@
 package com.js.deepsleep.xposed.hook
 
 import com.js.deepsleep.tools.Type
-import com.js.deepsleep.xposed.XpNSP
+import com.js.deepsleep.xposed.model.XpNSP
 import com.js.deepsleep.xposed.XpUtil
 import de.robv.android.xposed.XC_MethodHook
 import de.robv.android.xposed.XposedBridge

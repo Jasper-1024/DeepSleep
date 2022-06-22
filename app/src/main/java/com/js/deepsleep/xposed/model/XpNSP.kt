@@ -1,4 +1,4 @@
-package com.js.deepsleep.xposed
+package com.js.deepsleep.xposed.model
 
 import android.content.SharedPreferences
 import com.google.gson.Gson
@@ -8,6 +8,7 @@ import com.js.deepsleep.tools.SPTools
 import com.js.deepsleep.tools.Type
 import com.js.deepsleep.data.db.entity.AppSt
 import com.js.deepsleep.data.db.entity.Extend
+import com.js.deepsleep.xposed.XpUtil
 import de.robv.android.xposed.XSharedPreferences
 
 class XpNSP(private val packageName: String) {

@@ -14,7 +14,7 @@ import org.koin.core.qualifier.named
 
 open class FBaseFragment : Fragment() {
 
-    open val type: Type = Type.Wakelock
+    open val type: Type  = Type.Wakelock
 
     lateinit var packageName: String
 

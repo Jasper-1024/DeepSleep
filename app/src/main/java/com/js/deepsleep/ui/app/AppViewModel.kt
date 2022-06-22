@@ -1,14 +1,17 @@
 package com.js.deepsleep.ui.app
 
+import android.os.Bundle
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
+import com.js.deepsleep.BasicApp
 import com.js.deepsleep.R
-import com.js.deepsleep.tools.*
 import com.js.deepsleep.data.db.entity.App
+import com.js.deepsleep.data.db.entity.AppInfo
 import com.js.deepsleep.data.db.entity.AppSt
 import com.js.deepsleep.data.repository.app.AppRepo
+import com.js.deepsleep.tools.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.koin.core.component.KoinComponent
@@ -16,10 +19,11 @@ import org.koin.core.component.inject
 import org.koin.core.qualifier.named
 import java.text.Collator
 import java.util.*
-import kotlin.Comparator
 import kotlin.collections.set
 
+
 class AppViewModel : ViewModel(), KoinComponent {
+
 
     private val appAR: AppRepo by inject(named("AppR"))
     private val handleApp = HandleApp(this)
@@ -43,6 +47,21 @@ class AppViewModel : ViewModel(), KoinComponent {
                 it.flag = it.wakelock || it.alarm || it.service || it.sync || it.broadcast
             }
             appAR.setAppSt(appSt)
+        }
+    }
+    // call system force stop app
+    fun stopApp(appInfo: AppInfo) {
+        viewModelScope.launch(Dispatchers.Default) {
+
+            val args = Bundle()
+            args.putString("packageName", appInfo.packageName)
+            args.putInt("uid", appInfo.uid)
+
+            val uri = getURI()
+            val contentResolver = BasicApp.context.contentResolver
+
+//            LogUtil.d("xposed.deepsleep", "$uri,$args")
+            contentResolver.call(uri, "DeepSleep", XProviderMethods.forceStop, args)
         }
     }
 

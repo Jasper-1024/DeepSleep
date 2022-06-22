@@ -5,15 +5,18 @@ import android.widget.Toast
 import androidx.navigation.findNavController
 import com.js.deepsleep.BasicApp
 import com.js.deepsleep.R
-import com.js.deepsleep.tools.getSetting
+import com.js.deepsleep.data.db.entity.App
 import com.js.deepsleep.data.db.entity.AppInfo
-import com.js.deepsleep.data.db.entity.AppSt
+import com.js.deepsleep.tools.getSetting
 import com.js.deepsleep.ui.databinding.item.BaseItemHandle
 
 class HandleApp(private val appViewModel: AppViewModel) : BaseItemHandle() {
     // 保存 Appst
-    fun save(appSt: AppSt) {
-        appViewModel.saveSt(appSt)
+    fun save(app: App) {
+        app.st?.let { appViewModel.saveSt(it) }
+        app.info.let {
+            appViewModel.stopApp(it)
+        }
     }
 
     // 保存 load

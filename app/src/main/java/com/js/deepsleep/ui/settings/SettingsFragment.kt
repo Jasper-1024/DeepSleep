@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.result.contract.ActivityResultContracts.CreateDocument
 import androidx.preference.ListPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
@@ -19,7 +20,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
     // 备份
     private val backupRAFR =
-        registerForActivityResult(ActivityResultContracts.CreateDocument()) { uri ->
+        registerForActivityResult(CreateDocument("todo/todo")) { uri ->
             if (uri != null) {
                 viewModel.backup(uri)
             }

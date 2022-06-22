@@ -17,7 +17,7 @@ class SyncStViewModel : ViewModel(), KoinComponent {
 
     fun syncSp() {
         viewModelScope.launch(Dispatchers.IO) {
-            syncSPR.getAllAppSt().collect() { appSts ->
+            syncSPR.getAllAppSt().collect { appSts ->
                 appSts.map { appSt ->
                     saveSt2SP(appSt)
                 }

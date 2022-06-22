@@ -13,12 +13,12 @@ inline fun <T : Any> List<T>.appType(status: (T) -> Boolean): List<T> {
 // search list
 inline fun <T : Any> List<T>.search(query: String, text: (T) -> String): List<T> {
     /*lowerCase and no " " */
-    val q = query.toLowerCase(Locale.ROOT).trim { it <= ' ' }
+    val q = query.lowercase(Locale.ROOT).trim { it <= ' ' }
     if (q == "") {
         return this
     }
     return this.filter {
-        text(it).toLowerCase(Locale.ROOT).contains(q)
+        text(it).lowercase(Locale.ROOT).contains(q)
     }
 }
 

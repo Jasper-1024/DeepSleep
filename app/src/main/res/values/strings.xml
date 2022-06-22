@@ -67,7 +67,8 @@
     <string name="extendEnable">Extend not active,please enable extend function.</string>
     <string name="broadcast">broadcast</string>
     <string-array name="scopes" translatable="false">
-        <item>com.android.providers.settings</item>
+        <item>android</item>
+<!--        <item>com.android.providers.settings</item>-->
         <item>com.js.deepsleep</item>
     </string-array>
 </resources>
