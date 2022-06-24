@@ -15,7 +15,9 @@ class HandleApp(private val appViewModel: AppViewModel) : BaseItemHandle() {
     fun save(app: App) {
         app.st?.let { appViewModel.saveSt(it) }
         app.info.let {
-            appViewModel.stopApp(it)
+            if (getSetting("ForceStopEnable")) {
+                appViewModel.stopApp(it)
+            }
         }
     }
 

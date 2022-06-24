@@ -41,10 +41,15 @@
 
         <SwitchPreferenceCompat
             app:defaultValue="false"
+            app:key="ForceStopEnable"
+            app:summary="@string/forcestop_summary"
+            app:title="@string/forcestop" />
+
+        <SwitchPreferenceCompat
+            app:defaultValue="false"
             app:key="ExtendEnable"
             app:summary="@string/Extend_summary"
             app:title="@string/Extend" />
-
     </PreferenceCategory>
 
 </PreferenceScreen>

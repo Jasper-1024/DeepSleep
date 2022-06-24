@@ -1,6 +1,8 @@
 package com.js.deepsleep.ui.app
 
 import android.os.Bundle
+import android.widget.Toast
+import androidx.annotation.MainThread
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
@@ -13,7 +15,9 @@ import com.js.deepsleep.data.db.entity.AppSt
 import com.js.deepsleep.data.repository.app.AppRepo
 import com.js.deepsleep.tools.*
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 import org.koin.core.qualifier.named
@@ -57,16 +61,20 @@ class AppViewModel : ViewModel(), KoinComponent {
             return
         }
         viewModelScope.launch(Dispatchers.Default) {
+            val result = callStopApp(appInfo.packageName, appInfo.uid)
+            withContext(Dispatchers.Main) {
+                isSuccess(result)
+            }
+        }
+    }
 
-            val args = Bundle()
-            args.putString("packageName", appInfo.packageName)
-            args.putInt("uid", appInfo.uid)
-
-            val uri = getURI()
-            val contentResolver = BasicApp.context.contentResolver
-
-//            LogUtil.d("xposed.deepsleep", "$uri,$args")
-            contentResolver.call(uri, "DeepSleep", XProviderMethods.forceStop, args)
+    private fun isSuccess(result: Boolean) {
+        if (!result) {
+            Toast.makeText(
+                BasicApp.context,
+                BasicApp.context.getString(R.string.forcestopEnable),
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 

@@ -67,8 +67,11 @@
     <string name="extendEnable">Extend not active,please enable extend function.</string>
     <string name="broadcast">broadcast</string>
     <string-array name="scopes" translatable="false">
-        <item>android</item>
-        <item>com.android.providers.settings</item>
+<!--        <item>android</item>-->
+<!--        <item>com.android.providers.settings</item>-->
         <item>com.js.deepsleep</item>
     </string-array>
+    <string name="forcestop">Force stop automatically</string>
+    <string name="forcestop_summary">Forced to stop APP after setting change,Lsposed/Edxposed scope need to select system framework</string>
+    <string name="forcestopEnable">Force stop failed,Maybe system framework not selected on xposed.</string>
 </resources>

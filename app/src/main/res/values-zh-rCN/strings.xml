@@ -70,4 +70,7 @@
     <string name="backupErr">备份遇到错误</string>
     <string name="restoreErr">恢复遇到错误</string>
     <string name="extendEnable">拓展功能未激活,请在设置开启.</string>
+    <string name="forcestop">强制自动停止APP</string>
+    <string name="forcestop_summary">设置更改后强制停止 APP,作用域需选择系统框架</string>
+    <string name="forcestopEnable">终止程序失败,请确保 xposed 作用域选择了系统框架</string>
 </resources>

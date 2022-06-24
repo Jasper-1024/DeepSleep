@@ -8,6 +8,9 @@ import android.os.Bundle
 import android.os.RemoteException
 import android.os.UserHandle
 import android.provider.Settings
+import android.widget.Toast
+import com.js.deepsleep.BasicApp
+import com.js.deepsleep.R
 import java.lang.reflect.Method
 
 private const val TAG = "XProvider"
@@ -60,14 +63,15 @@ private fun xForceStop(context: Context, extras: Bundle): Bundle {
     val userid = getUserId(uid)
 
     forceStop(context, packageName!!, userid)
-    return Bundle()
+    return forceStop(context, packageName, userid)
 }
 
 // force stop app
 @Throws(Throwable::class)
-private fun forceStop(context: Context, packageName: String, userid: Int) {
+private fun forceStop(context: Context, packageName: String, userid: Int): Bundle {
     // Access activity manager as system user
     val id = Binder.clearCallingIdentity()
+    val result = Bundle()
     try {
         // public void forceStopPackageAsUser(String packageName, int userId)
         val am = context.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
@@ -77,7 +81,24 @@ private fun forceStop(context: Context, packageName: String, userid: Int) {
             Int::class.javaPrimitiveType
         )
         mForceStop.invoke(am, packageName, userid)
+        //if success
+        result.putString("packageName", packageName)
     } finally {
         Binder.restoreCallingIdentity(id)
     }
+    return result
+}
+
+fun callStopApp(packageName: String, uid: Int): Boolean {
+
+    val args = Bundle()
+    args.putString("packageName", packageName)
+    args.putInt("uid", uid)
+
+    val uri = getURI()
+    val contentResolver = BasicApp.context.contentResolver
+
+    val result: Bundle? = contentResolver.call(uri, "DeepSleep", XProviderMethods.forceStop, args)
+
+    return result?.getString("packageName") == packageName
 }
