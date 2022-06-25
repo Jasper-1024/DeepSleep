@@ -86,7 +86,7 @@ class ProviderHandler(
 
     private suspend fun getExtend(packageName: String, type: Type): Extend? {
         return try {
-            db.extendDao().Extend(packageName, type.value)
+            db.extendDao().getExtend(packageName, type.value)
         } catch (e: Exception) {
             null
         }

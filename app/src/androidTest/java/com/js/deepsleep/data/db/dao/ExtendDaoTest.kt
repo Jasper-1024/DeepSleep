@@ -53,7 +53,7 @@ class ExtendDaoTest {
 
         runBlocking { extendDao.insert(TestData.extend) }
 
-        val tmp = runBlocking { extendDao.Extend(TestData.packageName, TestData.wakelock) }
+        val tmp = runBlocking { extendDao.getExtend(TestData.packageName, TestData.wakelock) }
 
         Assert.assertEquals(tmp, TestData.extend)
 //        runBlocking {
