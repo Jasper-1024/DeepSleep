@@ -29,6 +29,10 @@
                     android:id="@+id/menu_sort_name"
                     android:onClick="statusRestricted"
                     android:title="@string/menu_filter_restricted" />
+                <item
+                    android:id="@+id/menu_filter_extend"
+                    android:onClick="statusExtend"
+                    android:title="@string/menu_filter_extend" />
 
                 <!--                <item-->
                 <!--                    android:id="@+id/menu_sort_count"-->

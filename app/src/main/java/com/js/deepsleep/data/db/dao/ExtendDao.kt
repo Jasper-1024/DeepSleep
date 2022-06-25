@@ -27,9 +27,8 @@ interface ExtendDao {
     @Delete
     suspend fun delete(extends1: List<Extend>)
 
-    // for test
     @Query("select * from extend where packageName_ex = :packageName and type = :type")
-    suspend fun Extend(packageName: String, type: String): Extend
+    fun getExtend(packageName: String, type: String): Extend?
 
     @Query("select * from extend")
     suspend fun Extends(): List<Extend>

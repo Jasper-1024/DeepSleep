@@ -15,6 +15,10 @@ class ER(private val extendDao: ExtendDao, private val type: Type) : ExtendRepo 
         }
     }
 
+    override fun getExtend(packageName: String, type: Type): Extend? {
+        return extendDao.getExtend(packageName, type.value)
+    }
+
     override suspend fun setExtend(extend: Extend) {
 //        LogUtil.d("test12", "$extend")
         extendDao.insert(extend)

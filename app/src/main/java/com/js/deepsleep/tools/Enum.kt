@@ -5,7 +5,7 @@ enum class Type(var value: String) {
 }
 
 enum class AppType(var type: Int) {
-    All(0), User(1), System(2), Restricted(3)
+    All(0), User(1), System(2), Restricted(3), Extend(4)
 }
 
 enum class Sort(var type: Int) {

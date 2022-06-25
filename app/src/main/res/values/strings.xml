@@ -7,6 +7,7 @@
     <string name="menu_filter_system">show system app</string>
     <string name="menu_filter_all">show all app</string>
     <string name="menu_filter_restricted">show restricted app</string>
+    <string name="menu_filter_extend">show Extend enabled app</string>
     <string name="search_title">search</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="wakelock">wakelock</string>
@@ -67,8 +68,8 @@
     <string name="extendEnable">Extend not active,please enable extend function.</string>
     <string name="broadcast">broadcast</string>
     <string-array name="scopes" translatable="false">
-<!--        <item>android</item>-->
-<!--        <item>com.android.providers.settings</item>-->
+        <!--        <item>android</item>-->
+        <!--        <item>com.android.providers.settings</item>-->
         <item>com.js.deepsleep</item>
     </string-array>
     <string name="forcestop">Force stop automatically</string>

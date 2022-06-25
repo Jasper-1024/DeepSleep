@@ -83,6 +83,11 @@ class MainActivity : AppCompatActivity() {
         menu.isChecked = true
     }
 
+    fun statusExtend(menu: MenuItem) {
+        mainViewModel.type.postValue(AppType.Extend)
+        menu.isChecked = true
+    }
+
     override fun onPrepareOptionsMenu(menu: Menu): Boolean {
         // 搜索栏
         val searchView = menu.findItem(R.id.search).actionView as SearchView

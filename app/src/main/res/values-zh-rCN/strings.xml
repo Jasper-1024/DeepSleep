@@ -9,6 +9,7 @@
     <string name="menu_filter_system">系统应用</string>
     <string name="menu_filter_all">全应用</string>
     <string name="menu_filter_restricted">已限制应用</string>
+    <string name="menu_filter_extend">以设置拓展功能应用</string>
     <string name="search_title">搜索</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="wakelock">唤醒锁</string>

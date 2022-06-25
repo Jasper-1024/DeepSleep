@@ -13,6 +13,7 @@ import com.js.deepsleep.data.db.entity.App
 import com.js.deepsleep.data.db.entity.AppInfo
 import com.js.deepsleep.data.db.entity.AppSt
 import com.js.deepsleep.data.repository.app.AppRepo
+import com.js.deepsleep.data.repository.extend.ExtendRepo
 import com.js.deepsleep.tools.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -30,6 +31,9 @@ class AppViewModel : ViewModel(), KoinComponent {
 
 
     private val appAR: AppRepo by inject(named("AppR"))
+
+    private val extendR: ExtendRepo by inject(named("wakelockER"))
+
     private val handleApp = HandleApp(this)
 
     // 更新应用列表
@@ -116,6 +120,7 @@ class AppViewModel : ViewModel(), KoinComponent {
             AppType.System -> ::systemApp
             AppType.Restricted -> ::restricted
             AppType.All -> ::allApp
+            AppType.Extend -> ::extendApp
         }
     }
 
@@ -123,6 +128,21 @@ class AppViewModel : ViewModel(), KoinComponent {
     private fun systemApp(app: App) = app.info.system
     private fun restricted(app: App) = app.st!!.flag
     private fun allApp(app: App) = true
+
+
+    private fun extendApp(app: App): Boolean {
+        val wakelockEX = extendR.getExtend(app.info.packageName, Type.Wakelock)
+        val alarmEX = extendR.getExtend(app.info.packageName, Type.Alarm)
+        if (wakelockEX != null && alarmEX != null) {
+            if (wakelockEX.allowList.isNotEmpty() || alarmEX.allowList.isNotEmpty()
+                || wakelockEX.blockList.isNotEmpty() || alarmEX.blockList.isNotEmpty()
+                || wakelockEX.rE.isNotEmpty() || alarmEX.rE.isNotEmpty()
+            ) {
+                return true
+            }
+        }
+        return false
+    }
 
     // 搜索
     private fun search(app: App) = "${app.info.label}${app.info.packageName}"
