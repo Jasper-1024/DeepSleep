@@ -20,8 +20,8 @@ android {
         applicationId "com.js.deepsleep"
         minSdkVersion 24
         targetSdkVersion 32
-        versionCode 12
-        versionName "1.2.1-rc2"
+        versionCode 16
+        versionName "1.2.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -79,7 +79,7 @@ dependencies {
     implementation 'androidx.preference:preference-ktx:1.2.0'
 
     // activity
-    def activity_version = "1.6.0-alpha04"
+    def activity_version = "1.6.0-alpha05"
     implementation "androidx.activity:activity-ktx:$activity_version"
 
     // fragment
@@ -89,7 +89,7 @@ dependencies {
 //    debugImplementation "androidx.fragment:fragment-testing:$fragment_version"
 
     //Lifecycle
-    def lifecycle_version = "2.4.1"
+    def lifecycle_version = "2.5.0"
     def arch_version = "2.1.0"
     // ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
@@ -115,7 +115,7 @@ dependencies {
     testImplementation "androidx.arch.core:core-testing:$arch_version"
 
     // Navigation
-    def nav_version = "2.5.0-rc01"
+    def nav_version = "2.5.0"
     // Kotlin
 //    implementation "androidx.navigation:navigation-runtime-ktx:$nav_version"
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
@@ -125,7 +125,7 @@ dependencies {
     // Testing Navigation
     androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
     // Jetpack Compose Integration
-    implementation "androidx.navigation:navigation-compose:2.5.0-rc01"
+    implementation "androidx.navigation:navigation-compose:2.5.0"
 
     //viewpager2
     implementation "androidx.viewpager2:viewpager2:1.0.0"
@@ -180,7 +180,7 @@ dependencies {
 //    implementation "org.koin:koin-androidx-ext:$koin_version"
 
     //gson
-    implementation 'com.google.code.gson:gson:2.8.9'
+    implementation 'com.google.code.gson:gson:2.9.0'
 
     //glide
     implementation 'com.github.bumptech.glide:glide:4.12.0'

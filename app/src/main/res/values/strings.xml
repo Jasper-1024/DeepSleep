@@ -19,7 +19,7 @@
     <string name="Save">Save</string>
     <string name="allowList">AllowList</string>
     <string name="blockList">BlockList</string>
-    <string name="rE">Regular expression</string>
+    <string name="rE">Block-Regular expression</string>
 
     <string name="settings">Settings</string>
     <string name="theme">Theme</string>
@@ -50,8 +50,6 @@
     <string name="SourceCode">Source Code</string>
     <string name="SourceCodeUrl">https://github.com/Jasper-1024/DeepSleep</string>
     <string name="License">License</string>
-    <string name="donate">Donate?</string>
-    <string name="donateErr">您未安装支付宝或启动异常..😂..</string>
     <string name="other">Other</string>
     <string name="Extend">Extend function</string>
     <string name="experimental">Experimental function</string>
