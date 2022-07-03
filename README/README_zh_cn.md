@@ -1,35 +1,38 @@
 # DeepSleep
 
 - DeepSleep 是 Xposed 模块.可以限制应用后台行为,节省待机电量消耗.
-  - 禁止申请 [唤醒锁/wakelock](https://developer.android.com/training/scheduling/wakelock) 和 [闹钟/alarms](https://developer.android.com/training/scheduling/alarms),防止多余唤醒.
-  - 禁止启动 [后台服务/Service](https://developer.android.com/guide/components/services),减少内存消耗.
-  - 禁止 [同步/sync](https://developer.android.com/training/sync-adapters?hl=zh-cn),防止多余唤醒.
+    - 禁止申请 [唤醒锁/wakelock](https://developer.android.com/training/scheduling/wakelock)
+      和 [闹钟/alarms](https://developer.android.com/training/scheduling/alarms),防止多余唤醒.
+    - 禁止启动 [后台服务/Service](https://developer.android.com/guide/components/services),减少内存消耗.
+    - 禁止 [同步/sync](https://developer.android.com/training/sync-adapters?hl=zh-cn),防止多余唤醒.
 
 - EDxposed/LSPosed 作用域 选择需要限制应用.
 
 - 严重警告
-  - 如果您的设备没有待机耗电问题并不推荐使用 deepsleep.
-  - 使用 deepsleep 限制应用,可能会导致应用出现异常问题.
-    - 聊天应用 可能出现消息延迟
-    - 音乐播放器 可能无法锁屏播放
-    - 其他等因限制应用后台行为导致的异常.
+    - 如果您的设备没有待机耗电问题并不推荐使用 deepsleep.
+    - 使用 deepsleep 限制应用,可能会导致应用出现异常问题.
+        - 聊天应用 可能出现消息延迟
+        - 音乐播放器 可能无法锁屏播放
+        - 其他等因限制应用后台行为导致的异常.
 
 ## 关于
 
 - 因为精力有限, NoWakeLock 逐渐处于停更状态,且 NoWakeLock 一些功能过于复杂,因此集中时间编写了 DeepSleep.
+- DeepSleep 配合 BBS 使用教程
+  -> [Android 待机耗电篇 ( Nowakelock & DeepSleep & BetterBatteryStats)](https://jasper1024.com/jasper/20220619024750/)
 
 ## 功能
 
 - ~~Beta~~:
-  - ~~wakelock/alarm/service/sync 限制~~
-  - ~~帮助/关于界面~~
-  - ~~黑白名单/正则支持~~
-  - ~~深色/浅色主题切换~~
-  - ~~备份/还原支持~~
-  - 广播 限制
+    - ~~wakelock/alarm/service/sync 限制~~
+    - ~~帮助/关于界面~~
+    - ~~黑白名单/正则支持~~
+    - ~~深色/浅色主题切换~~
+    - ~~备份/还原支持~~
+    - ~~广播 限制(舍去)~~
 
 - Release:
-  - 禁用方案加载
+    - 禁用方案加载(未完成)
 
 ## 兼容性
 
