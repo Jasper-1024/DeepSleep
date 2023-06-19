@@ -206,6 +206,8 @@ dependencies {
     compileOnly 'de.robv.android.xposed:api:82'
     //如果需要引入文档，方便查看的话
     compileOnly 'de.robv.android.xposed:api:82:sources'
+    compileOnly files('libs/api-82.jar')
+    compileOnly files('libs/api-82-sources.jar')
 
     //androidX test
     // Core library
