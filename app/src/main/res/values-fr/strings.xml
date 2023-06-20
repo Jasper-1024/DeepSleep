@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DeepSleep</string>
+    <string name="test">Test</string>
+    <string name="navigation_view_header_title">Test</string>
+
+    <string name="menu_filter">filtre</string>
+    <string name="menu_filter_user">Applications utilisateur</string>
+    <string name="menu_filter_system">Applications système </string>
+    <string name="menu_filter_all">Toutes les applications</string>
+    <string name="menu_filter_restricted">Applications restreintes</string>
+    <string name="menu_filter_extend">Applications avec fonctionnalités étendues activées</string>
+    <string name="search_title">Rechercher</string>
+    <string name="hello_blank_fragment">Bonjour, fragment vide</string>
+    <string name="wakelock">Verrouillage de réveil</string>
+    <string name="alarm">Alarme</string>
+    <string name="server">Serveur</string>
+    <string name="sync">Synchronisation</string>
+    <string name="broadcast">Diffusion</string>
+    <string name="xposeddescription">Contrôlez le verrouillage de réveil, les alarmes, les services, la synchronisation, etc.</string>
+    <string name="active">Module non actif</string>
+    <string name="Save">Enregistrer</string>
+    <string name="allowList">Liste blanche</string>
+    <string name="blockList">Liste noire</string>
+    <string name="rE">Blocage - Expression régulière</string>
+
+    <string name="settings">Paramètres</string>
+
+    <string name="theme">Thème</string>
+    <string name="theme_list">Thème global</string>
+    <string name="light_theme_name">Léger</string>
+    <string name="dark_theme_name">Foncé</string>
+    <string name="black_theme_name">Noir (AMOLED)</string>
+    <string name="system_theme_name">Suivre le système</string>
+
+    <string name="about">A propos</string>
+
+    <string name="help">Aide</string>
+    <string name="help_instructions">Cliquez sur l\'icône de l\'application pour accéder aux paramètres globaux de l\'application.
+        <![CDATA[<br><br>]]> Appuyez longuement sur le nom de l\'application pour accéder aux paramètres étendus, y compris la liste blanche/liste noire/support d\'expression régulière.
+        <![CDATA[<br><br>]]> Priorité : paramètres étendus {Liste blanche> Liste noire> Régulier}> Paramètres globaux
+        <![CDATA[<br><br>]]> Si vous utilisez EdXposed ou LSPosed, l'application que vous souhaitez limiter doit être sélectionnée dans la portée d'activation du module.
+        <![CDATA[<br><br>]]> Avertissement sérieux : ne restreignez pas les applications système, cela entraînerait des conséquences imprévisibles.
+    </string>
+    <string name="help_contact">Contact :\n
+            Si vous avez des questions ou rencontrez des bogues pendant l\'utilisation, vous pouvez m\'envoyer un e-mail ou ouvrir un nouveau problème. \n
+        \n
+        Problème : https://github.com/Jasper-1024/DeepSleep/issues \n
+        \n
+        JasperHale: ljy087621@gmail.com</string>
+    <string name="appname">Nom d\'application</string>
+    <string name="version">Version </string>
+    <string name="Support">Support</string>
+    <string name="SourceCode">Code source</string>
+    <string name="SourceCodeUrl">https://github.com/Jasper-1024/DeepSleep</string>
+    <string name="License">Licence</string>
+    <string name="other">Autre</string>
+    <string name="Extend">Fonctionnalités étendues</string>
+    <string name="experimental">Fonction expérimentale</string>
+    <string name="Extend_summary">Prise en charge de la liste blanche/liste noire/expression régulière, appuyez longuement sur l\'application pour y accéder.</string>
+    <string name="BackupAndRestore">Sauvegarde et restauration</string>
+    <string name="backup_summary">Sauvegarder les paramètres de toutes les applications installées dans un fichier</string>
+    <string name="backup_title">Créer un nouveau fichier de sauvegarde</string>
+    <string name="restore_summary">La restauration à partir d\'un fichier de sauvegarde écrasera les paramètres actuels</string>
+    <string name="restore_title">Restaurer à partir d\'un fichier de sauvegarde</string>
+    <string name="backup">Sauvegarde terminée</string>
+    <string name="restore">Restauration terminée</string>
+    <string name="backupErr">Erreur de sauvegarde</string>
+    <string name="restoreErr">Erreur de restauration</string>
+    <string name="extendEnable">Les fonctionnalités étendues ne sont pas actives, veuillez les activer dans les paramètres.</string>
+    <string name="forcestop">Arrêt forcé automatique de l\'application</string>
+    <string name="forcestop_summary">Forcer l\'arrêt de l\'application après modification des paramètres, la portée doit sélectionner le cadre système</string>
+    <string name="forcestopEnable">Échec de l\'arrêt forcé de l\'application. Assurez-vous que la portée d\'xposed a sélectionné le cadre système</string>
+</resources>
