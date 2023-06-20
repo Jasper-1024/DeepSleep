@@ -1,8 +1,9 @@
 plugins {
     id 'com.android.application' // 主要插件, 提供了Android应用构建和打包的核心功能
     id 'kotlin-android' // kolin 语言的编译 打包
-    id 'kotlin-kapt' // kotlin 注解处理器
+    id 'kotlin-kapt' // kotlin 注解处理器 | databinding 还需要
     id("androidx.navigation.safeargs.kotlin") // navigation safe 插件
+    id "com.google.devtools.ksp" version "$ksp_version"  // kotlin 语言的编译 打包
 }
 
 kapt {
@@ -103,7 +104,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
     // Annotation processor
     //noinspection LifecycleAnnotationProcessorWithJava8
-    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+    ksp "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
     // alternately - if using Java8, use the following instead of lifecycle-compiler
     implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
     // optional - helpers for implementing LifecycleOwner in a Service
@@ -140,7 +141,7 @@ dependencies {
     //Room
     def room_version = "2.5.1"
     implementation "androidx.room:room-runtime:$room_version"
-    kapt "androidx.room:room-compiler:$room_version"
+    ksp "androidx.room:room-compiler:$room_version"
     // optional - Kotlin Extensions and Coroutines support for Room
     implementation "androidx.room:room-ktx:$room_version"
     // optional - Test helpers
@@ -200,7 +201,7 @@ dependencies {
 
     //glide
     implementation 'com.github.bumptech.glide:glide:4.15.1'
-    kapt 'com.github.bumptech.glide:compiler:4.15.1'
+    ksp 'com.github.bumptech.glide:compiler:4.15.1'
 
     //Xposed
     compileOnly 'de.robv.android.xposed:api:82'
